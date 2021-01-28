@@ -28,12 +28,14 @@ public class Game {
 //	//user 1 - N game
 //	//game 1 - N review
 
-//	@ManyToOne
-//	@JoinColumn(name = "FK_UserId")
-//	private User user;
-//	
-//	@OneToMany(mappedBy = "game")
-//	private Set<Reviews> reviews;
+
+
+	@ManyToOne
+	@JoinColumn(name = "FK_UserId")
+	private User user;
+	
+	@OneToMany(mappedBy = "game")
+	private Set<Reviews> review;
 	
 	@Column(name="createdAt", nullable = false, updatable = false)
 	@CreationTimestamp
@@ -118,18 +120,24 @@ public class Game {
 	public void setDemo(String demo) {
 		this.demo = demo;
 	}
-//	public User getUser() {
-//		return user;
-//	}
-//	public void setUser(User user) {
-//		this.user = user;
-//	}
-//	public Set<Reviews> getReviews() {
-//		return reviews;
-//	}
-//	public void setReviews(Set<Reviews> reviews) {
-//		this.reviews = reviews;
-//	}
 
+	public Date getReleaseDate() {
+		return releaseDate;
+	}
+	public void setReleaseDate(Date releaseDate) {
+		this.releaseDate = releaseDate;
+	}
+	public User getUser() {
+		return user;
+	}
+	public void setUser(User user) {
+		this.user = user;
+	}
+	public Set<Reviews> getReview() {
+		return review;
+	}
+	public void setReview(Set<Reviews> review) {
+		this.review = review;
+	}
 	
 }
