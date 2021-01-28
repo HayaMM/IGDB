@@ -20,10 +20,11 @@ public class Reviews {
 
 //	@ManyToOne
 //	@JoinColumn(name = "FK_GameId")
-//	
+
 //	@ManyToOne
 //	@JoinColumn(name = "FK_UserId")
 
+    
 	@Column(name = "createdAt", nullable = false, updatable = false)
 	@CreationTimestamp
 	private LocalDateTime createAt;
