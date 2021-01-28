@@ -96,12 +96,7 @@ public class Game {
 	public void setConsole(String console) {
 		this.console = console;
 	}
-	public Date getReleaseDate() {
-		return releaseDate;
-	}
-	public void setReleaseDate(Date releaseDate) {
-		this.releaseDate = releaseDate;
-	}
+	
 	public String getCategory() {
 		return category;
 	}
