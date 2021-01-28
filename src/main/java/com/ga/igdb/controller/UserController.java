@@ -27,6 +27,8 @@ public class UserController {
 	@Autowired
 	HttpServletRequest request;
 	
+	//method for mapping the sign up page
+	
 	@GetMapping("/user/signup")
 	public ModelAndView registration() {
 		ModelAndView mv = new ModelAndView();
@@ -37,7 +39,8 @@ public class UserController {
 		return mv;
 
 	}
-
+//method foe mapping the post sign up and check if the user exists or it is new account 
+	//and crypt the password
 	@PostMapping("/user/signup")
 	public ModelAndView registrUser(User user) {
 
@@ -66,7 +69,7 @@ public class UserController {
 
 	}
 	
-
+// method for mapping the log in page
 	@GetMapping("/user/login")
 	public ModelAndView login() {
 		ModelAndView mv = new ModelAndView();
@@ -76,6 +79,9 @@ public class UserController {
 		hc.setAppName(mv, env);
 		return mv;
 	}
+	
+	//method for mapping the post log in page and crypt the password to check if 
+	//the user exists and the password correct 
 	@PostMapping("/user/login")
 	public String login(User user) {
 		
@@ -93,24 +99,33 @@ public class UserController {
 				//get the user role in this session
 				session.setAttribute("userRole", matchUser.getUserRole());
 				
-				return "redirect:/";
-
-				//return "redirect:/user/profile";		
+				return "redirect:/user/profile";		
 				}
 		}
 		return "redirect:/user/login";
 	}
+	//method for mapping the profile page
+	@GetMapping("/user/profile")
+	public ModelAndView profile() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("user/profile");
+		
+		HomeController hc = new HomeController();
+		hc.setAppName(mv, env);
+		return mv;
+	}
 	
-
+	//method for mapping the logout and redirect to home page
 	@GetMapping("/user/logout")
 	public String logout() {
 		HttpSession session = request.getSession();
 		//destroy all the user session info
 		session.invalidate();
 		
-		return "redirect:/user/login";
+		return "redirect:/";
 	}
 	
+	// method for the user log in session
 	public boolean isUserLoggedIn() {
 		HttpSession session = request.getSession();
 
