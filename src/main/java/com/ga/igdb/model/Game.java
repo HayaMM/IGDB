@@ -35,7 +35,7 @@ public class Game {
 	private User user;
 	
 	@OneToMany(mappedBy = "game")
-	private Set<Reviews> review;
+	private Set<Reviews> reviews;
 	
 	@Column(name="createdAt", nullable = false, updatable = false)
 	@CreationTimestamp
@@ -128,11 +128,11 @@ public class Game {
 	public void setUser(User user) {
 		this.user = user;
 	}
-	public Set<Reviews> getReview() {
-		return review;
+	public Set<Reviews> getReviews() {
+		return reviews;
 	}
-	public void setReview(Set<Reviews> review) {
-		this.review = review;
+	public void setReviews(Set<Reviews> reviews) {
+		this.reviews = reviews;
 	}
 	
 }
