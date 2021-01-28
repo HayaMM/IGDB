@@ -15,7 +15,7 @@ public class Game {
 	private String gameName;
 	// cover is a photo of the game
 	private String cover;
-//    private Long rank;
+    private int rankNum;
 	private String companyName;
 	private String console;
 	private Date releaseDate;
@@ -27,7 +27,9 @@ public class Game {
 //	// Relations
 //	//user 1 - N game
 //	//game 1 - N review
-//	
+
+
+
 	@ManyToOne
 	@JoinColumn(name = "FK_UserId")
 	private User user;
@@ -38,6 +40,7 @@ public class Game {
 	@Column(name="createdAt", nullable = false, updatable = false)
 	@CreationTimestamp
 	private LocalDateTime createAt;
+	
 	
 	public String getGameName() {
 		return gameName;
@@ -61,6 +64,8 @@ public class Game {
 	@Column(name="updatedat", nullable = false, updatable = true)
 	@UpdateTimestamp
 	private LocalDateTime updateAt;
+
+
 	public int getId() {
 		return id;
 	}
@@ -73,12 +78,12 @@ public class Game {
 	public void setCover(String cover) {
 		this.cover = cover;
 	}
-//	public long getRank() {
-//		return rank;
-//	}
-//	public void setRank(long rank) {
-//		this.rank = rank;
-//	}
+	public int getRankNum() {
+		return rankNum;
+	}
+	public void setRankNum(int rankNum) {
+		this.rankNum = rankNum;
+	}
 	public String getCompanyName() {
 		return companyName;
 	}
@@ -91,7 +96,12 @@ public class Game {
 	public void setConsole(String console) {
 		this.console = console;
 	}
-
+	public Date getReleaseDate() {
+		return releaseDate;
+	}
+	public void setReleaseDate(Date releaseDate) {
+		this.releaseDate = releaseDate;
+	}
 	public String getCategory() {
 		return category;
 	}
@@ -110,6 +120,7 @@ public class Game {
 	public void setDemo(String demo) {
 		this.demo = demo;
 	}
+
 	public Date getReleaseDate() {
 		return releaseDate;
 	}
