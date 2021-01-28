@@ -20,6 +20,7 @@ public class Reviews {
 	private double rate;
 	private String reviewDes;
 
+
 	@ManyToOne
 	@JoinColumn(name = "FK_GameId")
 	private Game game;
@@ -30,6 +31,7 @@ public class Reviews {
 	private User user;
 
 
+    
 	@Column(name = "createdAt", nullable = false, updatable = false)
 	@CreationTimestamp
 	private LocalDateTime createAt;
