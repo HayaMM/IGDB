@@ -5,6 +5,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -18,11 +20,15 @@ public class Reviews {
 	private double rate;
 	private String reviewDes;
 
-//	@ManyToOne
-//	@JoinColumn(name = "FK_GameId")
-//	
-//	@ManyToOne
-//	@JoinColumn(name = "FK_UserId")
+	@ManyToOne
+	@JoinColumn(name = "FK_GameId")
+	private Game game;
+
+	
+	@ManyToOne
+	@JoinColumn(name = "FK_UserId")
+	private User user;
+
 
 	@Column(name = "createdAt", nullable = false, updatable = false)
 	@CreationTimestamp
@@ -70,6 +76,22 @@ public class Reviews {
 
 	public void setUpdateAt(LocalDateTime updateAt) {
 		this.updateAt = updateAt;
+	}
+
+	public Game getGame() {
+		return game;
+	}
+
+	public void setGame(Game game) {
+		this.game = game;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 }
