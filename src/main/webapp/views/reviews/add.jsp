@@ -1,20 +1,5 @@
 <jsp:include page="../shared/layout_.jsp"/>
 
-<%@ page language="java" contentType="text/html; charset=windows-1256"
-    pageEncoding="windows-1256"%>
-<!DOCTYPE html>
-<html>
-<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-.checked {
-  color: orange;
-}
-</style> -->
-<head>
-<meta charset="windows-1256">
-<title>Insert title here</title>
-</head>
-<body>
 <form action="${appName}reviews/add" method="post">
 
 	<div class="form-group">
@@ -32,9 +17,8 @@
 <span class="fa fa-star"></span>
 <span class="fa fa-star"></span>
 </div>  -->
+			<input name="user" type="hidden" value="${user.id}">
 
 		<button type="submit" class="btn btn-primary">Submit</button>
 
 </form>
-</body>
-</html>
