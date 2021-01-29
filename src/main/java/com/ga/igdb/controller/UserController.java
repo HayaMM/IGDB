@@ -9,8 +9,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
-
 import com.ga.igdb.dao.UserDao;
 import com.ga.igdb.model.User;
 
@@ -109,10 +109,36 @@ public class UserController {
 	public ModelAndView profile() {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("user/profile");
+		// take user info from game/review table
 		
 		HomeController hc = new HomeController();
 		hc.setAppName(mv, env);
 		return mv;
+	}
+	//the method for mapping the edit profile
+	@GetMapping("/user/edit")
+	public ModelAndView edit() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("user/edit");
+		
+		HomeController hc = new HomeController();
+		hc.setAppName(mv, env);
+		return mv;
+	}
+	
+	@PostMapping("/user/edit")
+	public String edit(@RequestParam String emailAddress) {
+		User user =  dao.findByEmailAddress(emailAddress);
+		ModelAndView mv = new ModelAndView();
+		
+		
+		mv.addObject("user", user);
+		HttpSession session = request.getSession();
+		session.setAttribute("updatedoctormessage", "The Doctor's information will be updated ");
+		HomeController hc = new HomeController();
+		hc.setAppName(mv, env);
+		
+		return "redirect:/user/profile";		
 	}
 	
 	//method for mapping the logout and redirect to home page
