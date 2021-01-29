@@ -15,7 +15,8 @@
 <a href="${appName}user/profile">profile</a>
 <a href="${appName}reviews/add">Add review</a>
 <a href="${appName}user/logout">logout</a>
-
-
+<!-- Game -->
+<a href="${appName}game/add">Add Game</a>
+<a href="${appName}game/index">All Games</a>
 </body>
 </html>
