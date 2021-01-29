@@ -24,7 +24,7 @@ public class Game {
 	// Review video of game play
 	private String demo;
 	
-//	// Relations
+//	// Relations of game model
 //	//user 1 - N game
 //	//game 1 - N review
 
