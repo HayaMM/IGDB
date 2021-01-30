@@ -58,7 +58,7 @@ public class GameController {
 	    return mv;
 	}
 	
-	// get route game details 
+	// get route game details  
 	@GetMapping("/game/detail")
 	public ModelAndView gameDetails(@RequestParam int id) {
 		Game game=gdao.findById(id);

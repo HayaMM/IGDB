@@ -10,7 +10,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
-
 import com.ga.igdb.dao.UserDao;
 import com.ga.igdb.model.User;
 
@@ -42,7 +41,7 @@ public class UserController {
 //method foe mapping the post sign up and check if the user exists or it is new account 
 	//and crypt the password
 	@PostMapping("/user/signup")
-	public ModelAndView registrUser(User user) {
+	public String registrUser(User user) {
 
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("user/login");
@@ -54,7 +53,7 @@ public class UserController {
 			// dbUser from database / user from the new user input
 			if (dbUser.getEmailAddress().equals(user.getEmailAddress())) {
 				mv.addObject("message", "User already exists");
-				return mv;
+				return "redirect:/user/signup";		
 			}
 		}
 		// password encryption- need dependency 
@@ -65,7 +64,7 @@ public class UserController {
 		HttpSession session = request.getSession();
 		session.setAttribute("messagereg", "you  have been added registared successfully");
 		
-		return mv;
+		return "redirect:/user/login";		
 
 	}
 	
@@ -109,10 +108,36 @@ public class UserController {
 	public ModelAndView profile() {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("user/profile");
+		// take user info from game/review table
 		
 		HomeController hc = new HomeController();
 		hc.setAppName(mv, env);
 		return mv;
+	}
+	//the method for mapping the edit profile
+	@GetMapping("/user/edit")
+	public ModelAndView edit() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("user/edit");
+		
+		HomeController hc = new HomeController();
+		hc.setAppName(mv, env);
+		return mv;
+	}
+	
+	@PostMapping("/user/edit")
+	public ModelAndView edit(User user) {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("user/profile");
+
+		String emailAddress = user.getEmailAddress();
+		User userct =  dao.findByEmailAddress(emailAddress);
+		user.setCreateAt(userct.getCreateAt());
+		dao.save(user);
+		
+		HomeController hc = new HomeController();
+		hc.setAppName(mv, env);
+		return mv;	
 	}
 	
 	//method for mapping the logout and redirect to home page
