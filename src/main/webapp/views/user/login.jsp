@@ -11,10 +11,11 @@
 </div>
 
 <div class="from-group">
-<label> PassWord </label>
-<input name="passWord" type="password" class="form-control">
+<label> Password </label>
+<input name="Password" type="password" class="form-control">
 </div>
 
 <br>
 <button type="submit" class="btn btn-primary">Submit</button>
+            <a href="${appName}user/forgotpassword">Forgot Password?</a>
 </form>
