@@ -33,16 +33,17 @@
 						aria-current="page" href="${appName}user/profile">profile</a></li>
 					<li class="nav-item"><a class="nav-link active"
 						aria-current="page" href="${appName}user/logout">logout</a></li>
+						
+			
 
 					</li>
-					<li class="nav-item"><a class="nav-link active"
-						aria-current="page" href="${appName}game/add">add game</a></li>
-
-					</li>
-					<li class="nav-item"><a class="nav-link active"
-						aria-current="page" href="${appName}game/index">game index</a></li>
-				</ul>
-
+					
+					    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="${appName}game/index">index</a></li>
+            <li><a class="dropdown-item" href="${appName}game/add">add</a></li>
+          </ul>
+          
+          
       <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Search</button>
