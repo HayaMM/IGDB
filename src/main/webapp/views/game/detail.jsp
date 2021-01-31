@@ -9,3 +9,27 @@ Game's release date: ${game.releaseDate} <br>
 Category: ${game.category} <br>
 Game's Description: ${game.description} <br>
 Game's demo: <iframe width="420" height="345" src="${game.demo}"></iframe> 
+
+<hr><br>
+<h3>Add review for this Game:</h3>
+<form action="${appName}reviews/add" method="post">
+
+	<div>
+		<label>Review Description </label>
+		 <input type="text" name="reviewDes">
+		 <label>Rank Number: </label><input type="number" name="rankNum" min="1" max="5">
+	</div>
+		<%-- <input name="user" type="hidden" value="${user.id}"> --%>
+
+		<button type="submit">Submit</button>
+
+</form>
+<hr><br>
+
+<h3>Game reviews:</h3>
+
+<c:forEach items="${reviews.getReviews()}" var="reviews">
+<div> Review Description: ${review.reviewsDes}</div>
+	<div> Rate: ${review.rate} </div>
+</c:forEach>
+
