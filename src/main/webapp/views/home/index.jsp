@@ -5,43 +5,48 @@
 
 
 <div class="container">
-	<div class="well well-sm">
-	
-	<div id="products" class="row grid-group">
-		<div class="item  col-xs-4 col-lg-4">
-			<div class="thumbnail">
-				<img style="size:25%;" class="group grid-group-image"
-					src="http://placehold.it/400x250/000/fff" alt="" />
-				<div class="caption">
-					<h4 class="group inner grid-group-item-heading">Crash Bandicoot</h4>
-					<p class="group inner grid-group-item-text">adventure game.</p>
-					<div class="row">
-						<div class="col-xs-12 col-md-6">
-							<p class="lead">Rate: ?? </p>
-						</div>
-
-					</div>
-				</div>
-
-			</div>
-		</div>
-			<div class="item  col-xs-4 col-lg-4">
-			<div class="thumbnail">
-				<img class="group grid-group-image size"
-					src="http://placehold.it/400x250/000/fff" alt="" />
-				<div class="caption">
-					<h4 class="group inner grid-group-item-heading">Crash Bandicoot</h4>
-					<p class="group inner grid-group-item-text">adventure game.</p>
-					<div class="row">
-						<div class="col-xs-12 col-md-6">
-							<p class="lead">Rate: ?? </p>
-						</div>
-
-					</div>
-				</div>
-
-			</div>
-		</div>
-	</div>
+ 
+    <div id="products" class="row grid-group">
+        <div class="item  col-xs-4 col-lg-4">
+            <div class="thumbnail">
+                <img class="group grid-group-image" src="images/the-legend-of-zelda-breath-of-the-wild-switch-hero.jpg" alt="" />
+                <div class="caption">
+                    <h4 class="group inner grid-group-item-heading">
+                        Product title</h4>
+                    <p class="group inner grid-group-item-text">
+                        Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                        sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                    <div class="row">
+                        <div class="col-xs-12 col-md-6">
+                            <p class="lead">
+                                Rate: ??</p>
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                            <a class="btn btn-success" href="#">Review</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="thumbnail">
+                <img class="group grid-group-image" src="images/Crash-Bandicoot.png" alt="" />
+                <div class="caption">
+                    <h4 class="group inner grid-group-item-heading">
+                        Product title</h4>
+                    <p class="group inner grid-group-item-text">
+                        Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                        sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                    <div class="row">
+                        <div class="col-xs-12 col-md-6">
+                            <p class="lead">
+                               Rate: ?? </p>
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                            <a class="btn btn-success" href="#">Review</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+      
+        </div>
+    </div>
 </div>
-

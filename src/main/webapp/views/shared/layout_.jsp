@@ -15,10 +15,6 @@
 </head>
 <body>
 
-<h1>${appName}</h1>
-<a href="${appName}user/login">log in</a>
-<a href="${appName}user/signup">Sign UP</a>
-<a href="${appName}reviews/add">Reviews</a>
 
 	<h1>Game Reviews Database</h1>
 
@@ -26,7 +22,7 @@
 
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 		<div class="container-fluid">
-			<a class="navbar-brand" href="#">Navbar</a>
+			<a class="navbar-brand" href="#">IGDB</a>
 			<button class="navbar-toggler" type="button"
 				data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
 				aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -45,7 +41,6 @@
 						aria-current="page" href="${appName}user/profile">profile</a></li>
 					<li class="nav-item"><a class="nav-link active"
 						aria-current="page" href="${appName}user/logout">logout</a></li>
-						
 					<li class="nav-item"><a class="nav-link active"
 						aria-current="page" href="${appName}reviews/detail">Reviews</a></li>
 
@@ -53,17 +48,22 @@
 					<!-- if the user log in only -->
 					<!-- Game -->
 
-
 					<li class="nav-item dropdown"><a
 						class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
-						role="button" data-bs-toggle="dropdown" aria-expanded="true">
+						role="button" data-bs-toggle="dropdown" aria-expanded="false">
 							Games</a>
 						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 					<li><a class="dropdown-item" href="${app.name}game/index">All
-							Games</a></li>
+							</a></li>
 					<li><a class="dropdown-item" href="${app.name}game/add">Add
-							Games</a></li>
+							</a></li>
 						</ul></li>
+			
+			
+			
+			
+			
+			
 			
 				</ul>
 				<form class="d-flex">
