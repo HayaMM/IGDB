@@ -1,0 +1,13 @@
+@charset "ISO-8859-1";
+
+body {
+	
+	padding: 20px;
+	background-color: #b2b2b2 ;
+}
+
+li a {
+	
+	
+	justify-content:  space-between;
+}

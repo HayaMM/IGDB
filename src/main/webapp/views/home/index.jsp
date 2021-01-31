@@ -1,2 +1,3 @@
-<jsp:include page="../shared/layout_.jsp"/>
+<jsp:include page="../shared/layout_.jsp" />
+
 
