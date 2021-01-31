@@ -49,7 +49,6 @@
 
 <a href="${appName}reviews/detail">Reviews</a>
 <!-- if the user log in only -->
-<a href="${appName}reviews/add">Add review</a>
 <!-- Game -->
 <a href="${appName}game/add">Add Game</a>
 <a href="${appName}game/index">All Games</a>

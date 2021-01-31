@@ -12,7 +12,7 @@
 
 <div class="from-group">
 <label> Password </label>
-<input name="Password" type="password" class="form-control">
+<input name="passWord" type="password" class="form-control">
 </div>
 
 <br>

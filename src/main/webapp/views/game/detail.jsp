@@ -9,3 +9,4 @@ Game's release date: ${game.releaseDate} <br>
 Category: ${game.category} <br>
 Game's Description: ${game.description} <br>
 Game's demo: <iframe width="420" height="345" src="${game.demo}"></iframe> 
+<br>

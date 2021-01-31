@@ -44,6 +44,8 @@ public class ReviewsController {
 		HomeController hc = new HomeController();
 		hc.setAppName(mv, env);
 		
+		var it = gamedao.findAll();
+		mv.addObject("games", it);
 		
 		if(!uc.isUserLoggedIn())
 		{
