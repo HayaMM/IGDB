@@ -33,3 +33,4 @@ Game's demo: <iframe width="420" height="345" src="${game.demo}"></iframe>
 	<div> Rate: ${review.rate} </div>
 </c:forEach>
 
+<br>

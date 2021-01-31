@@ -10,5 +10,6 @@
 <label>Category: </label><input type="text" name="category">
 <label>Game's Description: </label><input type="text" name="description">
 <label>Game's demo: </label><input type="text" name="demo">
+<input name="user" type="hidden" value="${user.id}">
 <button type="submit"> Add the Game </button>
 </form>
