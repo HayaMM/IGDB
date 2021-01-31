@@ -3,7 +3,7 @@
 
 
 <c:forEach items="${reviews.getReviews()}" var="review">
-	<div> Review Description: ${review.reviewsDes}</div>
+	<div> Review Description: ${review.reviewDes}</div>
 	<div> Rate: ${review.rate} </div>
 	<hr>
 </c:forEach>
