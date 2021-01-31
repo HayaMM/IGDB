@@ -1,6 +1,6 @@
 <jsp:include page="../shared/layout_.jsp" />
 <link rel="stylesheet" href="css/style.css">
-<script src="js/jsFile.js"></script>
+<script src="js/myjs.js"></script>
 
 
 
