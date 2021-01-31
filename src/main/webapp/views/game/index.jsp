@@ -1,6 +1,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <jsp:include page="../shared/layout_.jsp" />
 <table>
+<!--  -->
 <tr>
 <th>Game's Name</th> 
 <th>Cover of the game</th>
