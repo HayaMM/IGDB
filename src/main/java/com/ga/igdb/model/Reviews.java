@@ -1,6 +1,7 @@
 package com.ga.igdb.model;
 
 import java.time.LocalDateTime;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,19 +9,21 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 @Entity
 @Table(name = "Reviews")
 public class Reviews {
+	
 	@Id
 	@GeneratedValue
 	private int id;
-	private double rate;
+	
 	private String reviewDes;
-
-
+	
+	private double rate;
 	@ManyToOne
 	@JoinColumn(name = "FK_GameId")
 	private Game game;
@@ -48,6 +51,14 @@ public class Reviews {
 		this.id = id;
 	}
 
+	public String getReviewDes() {
+		return reviewDes;
+	}
+
+	public void setReviewDes(String reviewDes) {
+		this.reviewDes = reviewDes;
+	}
+
 	public double getRate() {
 		return rate;
 	}
@@ -56,12 +67,20 @@ public class Reviews {
 		this.rate = rate;
 	}
 
-	public String getReviewDes() {
-		return reviewDes;
+	public Game getGame() {
+		return game;
 	}
 
-	public void setReviewDes(String reviewDes) {
-		this.reviewDes = reviewDes;
+	public void setGame(Game game) {
+		this.game = game;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 	public LocalDateTime getCreateAt() {
@@ -80,20 +99,6 @@ public class Reviews {
 		this.updateAt = updateAt;
 	}
 
-	public Game getGame() {
-		return game;
-	}
-
-	public void setGame(Game game) {
-		this.game = game;
-	}
-
-	public User getUser() {
-		return user;
-	}
-
-	public void setUser(User user) {
-		this.user = user;
-	}
+	
 
 }
