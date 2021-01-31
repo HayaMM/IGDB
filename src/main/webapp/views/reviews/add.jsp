@@ -1,3 +1,4 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <jsp:include page="../shared/layout_.jsp"/>
 
 <form action="${appName}reviews/add" method="post">
@@ -17,6 +18,16 @@
 <span class="fa fa-star"></span>
 <span class="fa fa-star"></span>
 </div>  -->
+
+	<div class ="form-group">
+		<label>Reviews</label>
+		<select name="reviews" class="form-control" >
+			<c:forEach items="${reviews}" var="review">
+				<option value="${review.id}"> ${review.reviewDes} </option>
+			</c:forEach>	
+		</select>
+	</div>
+	
 			<input name="user" type="hidden" value="${user.id}">
 
 		<button type="submit" class="btn btn-primary">Submit</button>
