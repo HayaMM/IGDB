@@ -17,4 +17,5 @@
 
 <br>
 <button type="submit" class="btn btn-primary">Submit</button>
+            <a href="${appName}user/forgotpassword">Forgot Password?</a>
 </form>
