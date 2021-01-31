@@ -52,32 +52,10 @@
 </nav>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-			
-
-	
-		
-	
-
-
-
-
-
-
-
-
-
+<a href="${appName}reviews/detail">Reviews</a>
+<!-- if the user log in only -->
+<!-- Game -->
+<a href="${appName}game/add">Add Game</a>
+<a href="${appName}game/index">All Games</a>
 </body>
 </html>
