@@ -14,6 +14,12 @@
 	crossorigin="anonymous">
 </head>
 <body>
+
+<h1>${appName}</h1>
+<a href="${appName}user/login">log in</a>
+<a href="${appName}user/signup">Sign UP</a>
+<a href="${appName}reviews/add">Reviews</a>
+
 	<h1>Game Reviews Database</h1>
 
 
