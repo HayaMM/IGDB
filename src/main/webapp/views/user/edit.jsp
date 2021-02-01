@@ -23,5 +23,6 @@
 		name="emailAddress" type="hidden" value="${user.emailAddress}">
 
 	<br>
+	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 	<button type="submit" class="btn btn-primary">SUBMIT</button>
 </form>

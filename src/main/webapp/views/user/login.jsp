@@ -2,7 +2,7 @@
 
 <b>${message}</b>
 <br>
-<form action="${appName}user/login" method="post">
+<form action="${appName}login" method="post">
 
 
 <div class="from-group">
@@ -16,6 +16,8 @@
 </div>
 
 <br>
+<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+
 <button type="submit" class="btn btn-primary">Submit</button>
             <a href="${appName}user/forgotpassword">Forgot Password?</a>
 </form>
