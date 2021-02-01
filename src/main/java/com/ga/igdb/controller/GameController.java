@@ -8,8 +8,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import com.ga.igdb.dao.GameDao;
-//import com.ga.igdb.dao.ReviewsDao;
+import com.ga.igdb.dao.ReviewsDao;
 import com.ga.igdb.model.Game;
+import com.ga.igdb.model.Reviews;
 
 
 @Controller
@@ -21,8 +22,8 @@ public class GameController {
 	@Autowired
 	private GameDao gdao;
 	
-//	@Autowired
-//	private ReviewsDao rdao;
+	@Autowired
+	private ReviewsDao rdao;
 	
 	// get route add game
 	@GetMapping("/game/add")
@@ -59,14 +60,24 @@ public class GameController {
 	}
 	
 	// get route game details  
+//	@PostMapping("/game/detail")
+//	public String addgamere(Reviews reviews) {
+//rdao.save(reviews);
+//		
+//		return "redirect:/game/detail";
+//	}
+	// get route game details  
 	@GetMapping("/game/detail")
 	public ModelAndView gameDetails(@RequestParam int id) {
 		Game game=gdao.findById(id);
 		ModelAndView mv = new ModelAndView();
 	    mv.setViewName("game/detail");
 	    mv.addObject("game", game);
+	    var itr= rdao.findAll();
+	    mv.addObject("reviews", itr);
 	    HomeController hc = new HomeController();
 	    hc.setAppName(mv, env);
+
 	    return mv;
 	}
 	
