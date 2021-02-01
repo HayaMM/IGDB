@@ -7,12 +7,12 @@
 
 <div class="from-group">
 <label> Email Address </label>
-<input name="emailAddress" type="email" class="form-control">
+<input name="username" type="email" class="form-control">
 </div>
 
 <div class="from-group">
 <label> Password </label>
-<input name="passWord" type="password" class="form-control">
+<input name="password" type="password" class="form-control">
 </div>
 
 <br>

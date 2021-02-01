@@ -41,9 +41,10 @@ public class UserController {
 //method foe mapping the post sign up and check if the user exists or it is new account 
 	//and crypt the password
 	@PostMapping("/user/signup")
-	public String registrUser(User user) {
+	public ModelAndView registrUser(User user) {
 
 		ModelAndView mv = new ModelAndView();
+		mv.setViewName("home/index");
 		// check to user is already registered or not
 
 		var it = dao.findAll();
@@ -52,7 +53,7 @@ public class UserController {
 			// dbUser from database / user from the new user input
 			if (dbUser.getEmailAddress().equals(user.getEmailAddress())) {
 				mv.addObject("message", "User already exists");
-				return "redirect:/";		
+				return mv;
 			}
 		}
 		// password encryption- need dependency 
@@ -63,7 +64,7 @@ public class UserController {
 		HttpSession session = request.getSession();
 		session.setAttribute("messagereg", "you  have been added registared successfully");
 		
-		return "redirect:/";		
+		return mv;
 
 	}
 	
@@ -127,7 +128,7 @@ public class UserController {
 	@PostMapping("/user/edit")
 	public ModelAndView edit(User user) {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("user/profile");
+		mv.setViewName("/");
 
 		String emailAddress = user.getEmailAddress();
 		User userct =  dao.findByEmailAddress(emailAddress);

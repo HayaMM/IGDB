@@ -1,4 +1,6 @@
-package com.ga.blogapp.service;
+package com.ga.igdb.service;
+
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -8,7 +10,7 @@ import org.springframework.stereotype.Service;
 
 import com.ga.igdb.dao.UserDao;
 import com.ga.igdb.model.User;
-import com.ga.igdb.model.UserDetailsImpl;
+import com.ga.igdb.model.UserDetailsImp;
 
 
 
@@ -24,7 +26,7 @@ public class UserDetailsServiceImpl implements UserDetailsService{
 		if(user == null)
 			throw new UsernameNotFoundException("Not found");
 		
-		UserDetailsImpl userDetailsObj = new UserDetailsImpl(user);
+		UserDetailsImp userDetailsObj = new UserDetailsImp(user);
 		return userDetailsObj;
 	}
 

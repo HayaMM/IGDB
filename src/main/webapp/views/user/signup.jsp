@@ -27,8 +27,8 @@
 <div class="from-group">
 <label> Select Role </label>
 <select name="userRole" class="form-control">
-<option value="ADMIN">Admin</option>
-<option value="USER">User</option>
+<option value="ROLE_ADMIN">Admin</option>
+<option value="ROLE_USER">User</option>
 </select>
 </div>
 <br>
