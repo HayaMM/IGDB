@@ -1,7 +1,6 @@
 package com.ga.igdb.controller;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -28,8 +27,7 @@ public class ReviewsController {
 	@Autowired
 	private GameDao gamedao;
 	
-	@Autowired
-	private UserController uc;
+	
 	
 	@Autowired
 	HttpServletRequest request;
@@ -47,10 +45,6 @@ public class ReviewsController {
 		var it = gamedao.findAll();
 		mv.addObject("games", it);
 		
-		if(!uc.isUserLoggedIn())
-		{
-			mv.setViewName("home/index");
-		}
 		
 		return mv;
 	}
@@ -113,27 +107,12 @@ public class ReviewsController {
 		var it = gamedao.findAll();
 		mv.addObject("games", it);
 		
-		if(!uc.isUserLoggedIn())
-		{
-			mv.setViewName("home/index");
-		}
-		
 		return mv;
 	}
 	
 	//Get - Review Delete
 	@GetMapping("/reviews/delete")
-	public String deleteReview(@RequestParam int id) {
-		HttpSession session = request.getSession();
-
-		if(!uc.isUserLoggedIn())
-		{
-			return "redirect:/";
-		}
-		else if(session.getAttribute("userRole").equals("user"))
-		{
-			return "redirect:/article/index";
-		}
+	public String deleteReview(@RequestParam int id) {		
 		reviewsdao.deleteById(id);
 		return "redirect:/reviews/index";
 	}

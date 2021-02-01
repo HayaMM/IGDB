@@ -27,11 +27,12 @@
 <div class="from-group">
 <label> Select Role </label>
 <select name="userRole" class="form-control">
-<option value="ADMIN">Admin</option>
-<option value="USER">User</option>
+<option value="ROLE_ADMIN">Admin</option>
+<option value="ROLE_USER">User</option>
 </select>
 </div>
 <br>
+<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 <button type="submit" class="btn btn-primary">Submit</button>
 <button type="reset"  class="btn btn-primary">Clear</button>
 
