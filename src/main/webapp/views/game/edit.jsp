@@ -12,4 +12,6 @@
 <label>Game's demo: </label><input type="text" name="demo" value="${game.demo}">
 <input type="hidden" name="id" value="${game.id}">
 <button type="submit"> edit the Game </button>
+<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+
 </form>

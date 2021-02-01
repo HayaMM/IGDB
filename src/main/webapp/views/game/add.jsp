@@ -15,4 +15,6 @@
 		demo: </label><input type="text" name="demo"> <input name="user"
 		type="hidden" value="${user.id}">
 	<button type="submit">Add the Game</button>
+	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+	
 </form>
