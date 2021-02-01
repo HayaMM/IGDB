@@ -12,7 +12,7 @@ Game's demo: <iframe width="420" height="345" src="${game.demo}"></iframe>
 
 <hr><br>
 <h3>Add review for this Game:</h3>
-<form action="${appName}reviews/add" method="post">
+<form action="${appName}reviews/index" method="post">
 
 	<div>
 		<label>Review Description </label>
@@ -28,9 +28,9 @@ Game's demo: <iframe width="420" height="345" src="${game.demo}"></iframe>
 
 <h3>Game reviews:</h3>
 
-<c:forEach items="${reviews.getReviews()}" var="reviews">
-<div> Review Description: ${review.reviewsDes}</div>
-	<div> Rate: ${review.rate} </div>
+<c:forEach items="${review.getReview()}" var="reviews">
+<div> Review Description: ${reviews.reviewsDes}</div>
+	<div> Rate: ${reviews.rate} </div>
 </c:forEach>
 
 <br>

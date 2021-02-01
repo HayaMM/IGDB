@@ -28,8 +28,8 @@ public class ReviewsController {
 	@Autowired
 	private GameDao gamedao;
 	
-	@Autowired
-	private UserController uc;
+//	@Autowired
+//	private UserController uc;
 	
 	@Autowired
 	HttpServletRequest request;
@@ -47,10 +47,10 @@ public class ReviewsController {
 		var it = gamedao.findAll();
 		mv.addObject("games", it);
 		
-		if(!uc.isUserLoggedIn())
-		{
-			mv.setViewName("home/index");
-		}
+//		if(!uc.isUserLoggedIn())
+//		{
+//			mv.setViewName("home/index");
+//		}
 		
 		return mv;
 	}
@@ -113,10 +113,10 @@ public class ReviewsController {
 		var it = gamedao.findAll();
 		mv.addObject("games", it);
 		
-		if(!uc.isUserLoggedIn())
-		{
-			mv.setViewName("home/index");
-		}
+//		if(!uc.isUserLoggedIn())
+//		{
+//			mv.setViewName("home/index");
+//		}
 		
 		return mv;
 	}
@@ -124,16 +124,16 @@ public class ReviewsController {
 	//Get - Review Delete
 	@GetMapping("/reviews/delete")
 	public String deleteReview(@RequestParam int id) {
-		HttpSession session = request.getSession();
-
-		if(!uc.isUserLoggedIn())
-		{
-			return "redirect:/";
-		}
-		else if(session.getAttribute("userRole").equals("user"))
-		{
-			return "redirect:/article/index";
-		}
+//		HttpSession session = request.getSession();
+//
+//		if(!uc.isUserLoggedIn())
+//		{
+//			return "redirect:/";
+//		}
+//		else if(session.getAttribute("userRole").equals("user"))
+//		{
+//			return "redirect:/reviews/index";
+//		}
 		reviewsdao.deleteById(id);
 		return "redirect:/reviews/index";
 	}
