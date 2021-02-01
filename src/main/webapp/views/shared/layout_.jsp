@@ -37,6 +37,8 @@
 						aria-current="page" href="${appName}">Home</a></li>
 					<li class="nav-item"><a class="nav-link active"
 						aria-current="page" href="${appName}user/profile">profile</a></li>
+						<li class="nav-item"><a class="nav-link active"
+						aria-current="page" href="${appName}user/edit?id=<security:authentication property="principal.id"/>">edit profile</a></li>
 					<li class="nav-item"><a class="nav-link active"
 						aria-current="page" href="${appName}logout">logout</a></li>
 					<li class="nav-item"><a class="nav-link active"

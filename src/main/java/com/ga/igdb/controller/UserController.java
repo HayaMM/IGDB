@@ -9,6 +9,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import com.ga.igdb.dao.UserDao;
 import com.ga.igdb.model.User;
@@ -116,9 +117,12 @@ public class UserController {
 	}
 	//the method for mapping the edit profile
 	@GetMapping("/user/edit")
-	public ModelAndView edit() {
+	public ModelAndView edit(@RequestParam int id) {
+		User user = dao.findById(id); 
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("user/edit");
+	    mv.addObject("user", user);
+
 		
 		HomeController hc = new HomeController();
 		hc.setAppName(mv, env);
@@ -126,9 +130,8 @@ public class UserController {
 	}
 	
 	@PostMapping("/user/edit")
-	public ModelAndView edit(User user) {
+	public String edit(User user) {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("/");
 
 		String emailAddress = user.getEmailAddress();
 		User userct =  dao.findByEmailAddress(emailAddress);
@@ -137,8 +140,8 @@ public class UserController {
 		
 		HomeController hc = new HomeController();
 		hc.setAppName(mv, env);
-		return mv;	
-	}
+		return "redirect:/user/profile";
+		}
 	
 	//method for mapping the logout and redirect to home page
 //	@GetMapping("/user/logout")

@@ -15,6 +15,7 @@ public class UserDetailsImp implements UserDetails{
 	private String password;
 	private String firstName;
 	private String lastName;
+	private int id;
 	private List<GrantedAuthority> authorities; //takes it as user role
 	
 	//constructor
@@ -23,6 +24,7 @@ public class UserDetailsImp implements UserDetails{
 		this.password = user.getPassWord();
 		this.firstName = user.getFirstName();
 		this.lastName = user.getLastName();
+		this.id = user.getId();
 		this.authorities = Arrays.stream(user.getUserRole().split(","))
 				.map(SimpleGrantedAuthority::new)
 				.collect(Collectors.toList());
@@ -35,6 +37,9 @@ public class UserDetailsImp implements UserDetails{
 			return authorities;
 		}
 
+		public int getId() {
+			return id;
+		}
 		public String getName() {
 			// TODO Auto-generated method stub
 			return firstName + lastName;

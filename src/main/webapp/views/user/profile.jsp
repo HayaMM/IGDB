@@ -4,7 +4,6 @@
 <br>
 	<b>Hi: <security:authentication property="principal.Name"/> </b>
 		
-		<a href="${appName}user/edit">edit profile</a>
 		
 		
 		
