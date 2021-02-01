@@ -1,9 +1,9 @@
 <jsp:include page="../shared/layout_.jsp"/>
+	<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 
 <br>
-		<b>Hi: ${user.getFirstName()} ${user.getLastName()}</b>
+	<b>Hi: <security:authentication property="principal.Name"/> </b>
 		
-		<a href="${appName}user/edit">edit profile</a>
 		
 		
 		

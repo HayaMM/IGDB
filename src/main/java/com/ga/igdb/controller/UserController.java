@@ -9,6 +9,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import com.ga.igdb.dao.UserDao;
 import com.ga.igdb.model.User;
@@ -41,10 +42,10 @@ public class UserController {
 //method foe mapping the post sign up and check if the user exists or it is new account 
 	//and crypt the password
 	@PostMapping("/user/signup")
-	public String registrUser(User user) {
+	public ModelAndView registrUser(User user) {
 
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("user/login");
+		mv.setViewName("home/index");
 		// check to user is already registered or not
 
 		var it = dao.findAll();
@@ -53,7 +54,7 @@ public class UserController {
 			// dbUser from database / user from the new user input
 			if (dbUser.getEmailAddress().equals(user.getEmailAddress())) {
 				mv.addObject("message", "User already exists");
-				return "redirect:/user/signup";		
+				return mv;
 			}
 		}
 		// password encryption- need dependency 
@@ -64,7 +65,7 @@ public class UserController {
 		HttpSession session = request.getSession();
 		session.setAttribute("messagereg", "you  have been added registared successfully");
 		
-		return "redirect:/user/login";		
+		return mv;
 
 	}
 	
@@ -81,28 +82,28 @@ public class UserController {
 	
 	//method for mapping the post log in page and crypt the password to check if 
 	//the user exists and the password correct 
-	@PostMapping("/user/login")
-	public String login(User user) {
-		
-		BCryptPasswordEncoder bCrypt = new BCryptPasswordEncoder();
-		String emailAddress = user.getEmailAddress();
-		String password = user.getPassWord();
-		
-		User matchUser = dao.findByEmailAddress(emailAddress);
-		if(matchUser != null) {
-			if(bCrypt.matches(password,matchUser.getPassWord())) {
-				//Session
-				HttpSession session = request.getSession();
-				//get all the user objects in this session
-				session.setAttribute("user", matchUser);
-				//get the user role in this session
-				session.setAttribute("userRole", matchUser.getUserRole());
-				
-				return "redirect:/user/profile";		
-				}
-		}
-		return "redirect:/user/login";
-	}
+//	@PostMapping("/user/login")
+//	public String login(User user) {
+//		
+//		BCryptPasswordEncoder bCrypt = new BCryptPasswordEncoder();
+//		String emailAddress = user.getEmailAddress();
+//		String password = user.getPassWord();
+//		
+//		User matchUser = dao.findByEmailAddress(emailAddress);
+//		if(matchUser != null) {
+//			if(bCrypt.matches(password,matchUser.getPassWord())) {
+//				//Session
+//				HttpSession session = request.getSession();
+//				//get all the user objects in this session
+//				session.setAttribute("user", matchUser);
+//				//get the user role in this session
+//				session.setAttribute("userRole", matchUser.getUserRole());
+//				
+//				return "redirect:/user/profile";		
+//				}
+//		}
+//		return "redirect:/user/login";
+//	}
 	//method for mapping the profile page
 	@GetMapping("/user/profile")
 	public ModelAndView profile() {
@@ -116,9 +117,12 @@ public class UserController {
 	}
 	//the method for mapping the edit profile
 	@GetMapping("/user/edit")
-	public ModelAndView edit() {
+	public ModelAndView edit(@RequestParam int id) {
+		User user = dao.findById(id); 
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("user/edit");
+	    mv.addObject("user", user);
+
 		
 		HomeController hc = new HomeController();
 		hc.setAppName(mv, env);
@@ -126,9 +130,8 @@ public class UserController {
 	}
 	
 	@PostMapping("/user/edit")
-	public ModelAndView edit(User user) {
+	public String edit(User user) {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("user/profile");
 
 		String emailAddress = user.getEmailAddress();
 		User userct =  dao.findByEmailAddress(emailAddress);
@@ -137,31 +140,31 @@ public class UserController {
 		
 		HomeController hc = new HomeController();
 		hc.setAppName(mv, env);
-		return mv;	
-	}
+		return "redirect:/user/profile";
+		}
 	
 	//method for mapping the logout and redirect to home page
-	@GetMapping("/user/logout")
-	public String logout() {
-		HttpSession session = request.getSession();
-		//destroy all the user session info
-		session.invalidate();
-		
-		return "redirect:/";
-	}
-	
-	// method for the user log in session
-	public boolean isUserLoggedIn() {
-		HttpSession session = request.getSession();
-
-		if(session.getAttribute("user")== null) {
-			return false;
-			
-		}
-		else {
-			return true;
-		}
-	}
+//	@GetMapping("/user/logout")
+//	public String logout() {
+//		HttpSession session = request.getSession();
+//		//destroy all the user session info
+//		session.invalidate();
+//		
+//		return "redirect:/";
+//	}
+//	
+//	// method for the user log in session
+//	public boolean isUserLoggedIn() {
+//		HttpSession session = request.getSession();
+//
+//		if(session.getAttribute("user")== null) {
+//			return false;
+//			
+//		}
+//		else {
+//			return true;
+//		}
+//	}
 	
 	
 	

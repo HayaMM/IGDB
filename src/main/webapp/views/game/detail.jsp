@@ -11,8 +11,9 @@ Game's Description: ${game.description} <br>
 Game's demo: <iframe width="420" height="345" src="${game.demo}"></iframe> 
 
 <hr><br>
-<h3>Add review for this Game:</h3>
-<form action="${appName}reviews/index" method="post">
+
+ <h3>Add review for this Game:</h3>
+<form action="${appName}reviews/add" method="post">
 
 	<div>
 		<label>Review Description </label>
@@ -23,14 +24,24 @@ Game's demo: <iframe width="420" height="345" src="${game.demo}"></iframe>
 <input name="game" type="hidden" value="${game.id}">
 		<button type="submit">Submit</button>
 
-</form>
+</form>  
 <hr><br>
 
 <h3>Game reviews:</h3>
 
-<c:forEach items="${review.getReview()}" var="reviews">
-<div> Review Description: ${reviews.reviewsDes}</div>
-	<div> Rate: ${reviews.rate} </div>
-</c:forEach>
+
+<%--  <c:forEach items="${review.getReviews()}" var="reviews">
+<div> Review Description: ${review.reviewsDes}</div>
+	<div> Rate: ${review.rate} </div>
+</c:forEach>  --%>
+
+ <c:forEach items="${reviews}" var="review">
+ <c:if test="${game.id == review.game.id }">
+ 
+    <div>${review.reviewDes}</div>
+	<div> ${review.rate} </div>
+	</c:if>
+</c:forEach> 
+
 
 <br>
