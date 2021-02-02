@@ -5,154 +5,109 @@
 
 
 
-         
+					<link
+						href="https://fonts.googleapis.com/icon?family=Material+Icons"
+						rel="stylesheet">
+					<div class="cards">
+						<div class="card">
+							<img class="card__image"
+								src="images/the-legend-of-zelda-breath-of-the-wild-switch-hero.jpg" alt="">
+							<div class="card__content">
+								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+									Eos ducimus id ab tenetur delectus reiciendis fugit autem qui
+									at.</p>
+								<p>Alias itaque praesentium eum, pariatur consequatur
+									ducimus asperiores accusantium velit minima?</p>
+							</div>
+							<div class="card__info">
+								<div>
+									<i class="material-icons">Rating</i> 1
+								</div>
+								<div>
+									<a href="./" class="card__link">View Article</a>
+								</div>
+							</div>
+						</div>
+						<div class="card">
+							<img class="card__image"
+								src="https://fakeimg.pl/400x300/252c6a/fff/" alt="">
+							<div class="card__content">
+								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+									Eos ducimus id ab tenetur delectus reiciendis fugit autem qui
+									at.</p>
+								<p>Alias itaque praesentium eum, pariatur consequatur
+									ducimus asperiores accusantium velit minima?</p>
+							</div>
+							<div class="card__info">
+								<div>
+									<i class="material-icons">thumb_up</i>1,993
+								</div>
+								<div>
+									<a href="./" class="card__link">View Article</a>
+								</div>
+							</div>
+						</div>
+						<div class="card">
+							<img class="card__image"
+								src="https://fakeimg.pl/400x300/f1db26/000/" alt="">
+							<div class="card__content">
+								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+									Eos ducimus id ab tenetur delectus reiciendis fugit autem qui
+									at.</p>
+								<p>Alias itaque praesentium eum, pariatur consequatur
+									ducimus asperiores accusantium velit minima?</p>
+							</div>
+							<div class="card__info">
+								<div>
+									<i class="material-icons">thumb_up</i>887
+								</div>
+								<div>
+									<a href="./" class="card__link">View Article</a>
+								</div>
+							</div>
+						</div>
+						<div class="card">
+							<img class="card__image"
+								src="https://fakeimg.pl/400x300/252c6a/fff/" alt="">
+							<div class="card__content">
+								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+									Eos ducimus id ab tenetur delectus reiciendis fugit autem qui
+									at.</p>
+								<p>Alias itaque praesentium eum, pariatur consequatur
+									ducimus asperiores accusantium velit minima?</p>
+							</div>
+							<div class="card__info">
+								<div>
+									<i class="material-icons">thumb_up</i>2,512
+								</div>
+								<div>
+									<a href="./" class="card__link">View Article</a>
+								</div>
+							</div>
+						</div>
+						<div class="card">
+							<img class="card__image"
+								src="https://fakeimg.pl/400x300/009578/fff/" alt="">
+							<div class="card__content">
+								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+									Eos ducimus id ab tenetur delectus reiciendis fugit autem qui
+									at.</p>
+								<p>Alias itaque praesentium eum, pariatur consequatur
+									ducimus asperiores accusantium velit minima?</p>
+							</div>
+							<div class="card__info">
+								<div>
+									<i class="material-icons">thumb_up</i>140
+								</div>
+								<div>
+									<a href="./" class="card__link">View Article</a>
+								</div>
+							</div>
+						</div>
+					</div>
 
-
-<div class="container">
-    <div class="well well-sm">
-        <strong>Display</strong>
-        <div class="btn-group">
-            <a href="#" id="list" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-th-list">
-            </span>List</a> <a href="#" id="grid" class="btn btn-default btn-sm"><span
-                class="glyphicon glyphicon-th"></span>Grid</a>
-        </div>
-    </div>
-    <div id="products" class="row list-group">
-        <div class="item  col-xs-4 col-lg-4">
-            <div class="thumbnail">
-                <img class="group list-group-image" src="images/the-legend-of-zelda-breath-of-the-wild-switch-hero.jpg" alt="" />
-                <div class="caption">
-                    <h4 class="group inner list-group-item-heading">
-                        Zelda: Breath of the Wild</h4>
-                    <p class="group inner list-group-item-text">
-                        Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-                        sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                    <div class="row">
-                        <div class="col-xs-12 col-md-6">
-                            <p class="lead">
-                                Rate: </p>
-                        </div>
-                        <div class="col-xs-12 col-md-6">
-                            <a class="btn btn-success" href="#">Show Review</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="item  col-xs-4 col-lg-4">
-            <div class="thumbnail">
-                <img class="group list-group-image" src="http://placehold.it/400x250/000/fff" alt="" />
-                <div class="caption">
-                    <h4 class="group inner list-group-item-heading">
-                        Product title</h4>
-                    <p class="group inner list-group-item-text">
-                        Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-                        sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                    <div class="row">
-                        <div class="col-xs-12 col-md-6">
-                            <p class="lead">
-                                $21.000</p>
-                        </div>
-                        <div class="col-xs-12 col-md-6">
-                            <a class="btn btn-success" href="http://www.jquery2dotnet.com">Add to cart</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="item  col-xs-4 col-lg-4">
-            <div class="thumbnail">
-                <img class="group list-group-image" src="http://placehold.it/400x250/000/fff" alt="" />
-                <div class="caption">
-                    <h4 class="group inner list-group-item-heading">
-                        Product title</h4>
-                    <p class="group inner list-group-item-text">
-                        Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-                        sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                    <div class="row">
-                        <div class="col-xs-12 col-md-6">
-                            <p class="lead">
-                                $21.000</p>
-                        </div>
-                        <div class="col-xs-12 col-md-6">
-                            <a class="btn btn-success" href="http://www.jquery2dotnet.com">Add to cart</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="item  col-xs-4 col-lg-4">
-            <div class="thumbnail">
-                <img class="group list-group-image" src="http://placehold.it/400x250/000/fff" alt="" />
-                <div class="caption">
-                    <h4 class="group inner list-group-item-heading">
-                        Product title</h4>
-                    <p class="group inner list-group-item-text">
-                        Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-                        sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                    <div class="row">
-                        <div class="col-xs-12 col-md-6">
-                            <p class="lead">
-                                $21.000</p>
-                        </div>
-                        <div class="col-xs-12 col-md-6">
-                            <a class="btn btn-success" href="http://www.jquery2dotnet.com">Add to cart</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="item  col-xs-4 col-lg-4">
-            <div class="thumbnail">
-                <img class="group list-group-image" src="http://placehold.it/400x250/000/fff" alt="" />
-                <div class="caption">
-                    <h4 class="group inner list-group-item-heading">
-                        Product title</h4>
-                    <p class="group inner list-group-item-text">
-                        Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-                        sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                    <div class="row">
-                        <div class="col-xs-12 col-md-6">
-                            <p class="lead">
-                                $21.000</p>
-                        </div>
-                        <div class="col-xs-12 col-md-6">
-                            <a class="btn btn-success" href="http://www.jquery2dotnet.com">Add to cart</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="item  col-xs-4 col-lg-4">
-            <div class="thumbnail">
-                <img class="group list-group-image" src="http://placehold.it/400x250/000/fff" alt="" />
-                <div class="caption">
-                    <h4 class="group inner list-group-item-heading">
-                        Product title</h4>
-                    <p class="group inner list-group-item-text">
-                        Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-                        sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                    <div class="row">
-                        <div class="col-xs-12 col-md-6">
-                            <p class="lead">
-                                $21.000</p>
-                        </div>
-                        <div class="col-xs-12 col-md-6">
-                            <a class="btn btn-success" href="http://www.jquery2dotnet.com">Add to cart</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-<script type="text/javascript">
-$(document).ready(function() {
-    $('#list').click(function(event){event.preventDefault();$('#products .item').addClass('list-group-item');});
-    $('#grid').click(function(event){event.preventDefault();$('#products .item').removeClass('list-group-item');$('#products .item').addClass('grid-group-item');});
-});
-</script>
+					<script type="text/javascript"
+						src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+					<script type="text/javascript">
+						
+					</script>

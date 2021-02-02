@@ -61,10 +61,8 @@
 									profile</a></li>
 							<li class="nav-item"><a class="nav-link active"
 								aria-current="page" href="${appName}logout">logout</a></li>
-							<li class="nav-item"><a class="nav-link active"
-								aria-current="page" href="${appName}reviews/detail">Reviews</a></li>
 							<li class="nav-item dropdown"><a
-								class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+								class="nav-link dropdown-toggle nav-link active" href="#" id="navbarDropdown"
 								role="button" data-bs-toggle="dropdown" aria-expanded="false">
 									Games</a>
 								<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -89,10 +87,9 @@
 						</ul>
 					</div>
 
-
 				</security:authorize>
 
-				<form class="d-flex">
+				<form class="d-flex justify-content-end">
 					<input class="form-control me-2" type="search" placeholder="Search"
 						aria-label="Search">
 					<button class="btn btn-outline-success" type="submit">Search</button>
