@@ -14,6 +14,7 @@
 
 
 <td><a href="${appName}reviews/edit?id=${reviews.id}">edit</a>&nbsp;or&nbsp;<a href="${appName}reviews/delete?id=${reviews.id}">delete</a>
+
 </td>
 
 </tr>
