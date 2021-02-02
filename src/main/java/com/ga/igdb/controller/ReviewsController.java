@@ -27,7 +27,7 @@ public class ReviewsController {
 	@Autowired
 	private GameDao gamedao;
 	
-	
+
 	
 	@Autowired
 	HttpServletRequest request;
@@ -44,7 +44,7 @@ public class ReviewsController {
 		
 		var it = gamedao.findAll();
 		mv.addObject("games", it);
-		
+
 		
 		return mv;
 	}
@@ -107,11 +107,13 @@ public class ReviewsController {
 		var it = gamedao.findAll();
 		mv.addObject("games", it);
 		
+
 		return mv;
 	}
 	
 	//Get - Review Delete
 	@GetMapping("/reviews/delete")
+
 	public String deleteReview(@RequestParam int id) {		
 		reviewsdao.deleteById(id);
 		return "redirect:/reviews/index";

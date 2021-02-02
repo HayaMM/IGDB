@@ -1,52 +1,38 @@
 <jsp:include page="../shared/layout_.jsp" />
 <link rel="stylesheet" href="css/style.css">
-<script src="js/myjs.js"></script>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet">
 
 
 
-<div class="container">
- 
-    <div id="products" class="row grid-group">
-        <div class="item  col-xs-4 col-lg-4">
-            <div class="thumbnail">
-                <img class="group grid-group-image" src="images/the-legend-of-zelda-breath-of-the-wild-switch-hero.jpg" alt="" />
-                <div class="caption">
-                    <h4 class="group inner grid-group-item-heading">
-                        Product title</h4>
-                    <p class="group inner grid-group-item-text">
-                        Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-                        sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                    <div class="row">
-                        <div class="col-xs-12 col-md-6">
-                            <p class="lead">
-                                Rate: ??</p>
-                        </div>
-                        <div class="col-xs-12 col-md-6">
-                            <a class="btn btn-success" href="#">Review</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="thumbnail">
-                <img class="group grid-group-image" src="images/Crash-Bandicoot.png" alt="" />
-                <div class="caption">
-                    <h4 class="group inner grid-group-item-heading">
-                        Product title</h4>
-                    <p class="group inner grid-group-item-text">
-                        Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-                        sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                    <div class="row">
-                        <div class="col-xs-12 col-md-6">
-                            <p class="lead">
-                               Rate: ?? </p>
-                        </div>
-                        <div class="col-xs-12 col-md-6">
-                            <a class="btn btn-success" href="#">Review</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-      
-        </div>
-    </div>
-</div>
+
+<c:forEach >
+
+<div class="cards">
+	<div class="card">
+		<img class="card__image" src="${game.cover}"
+			alt="">
+		<div class="card__content">
+			<p></p>
+		</div>
+		<div class="card__info">
+			<div>
+				<i class="material-icons">rank</i>${game.rankNum}
+			</div>
+			<div>
+				<a href="${appName}game/detail?id=${game.id}" class="card__link">View</a>
+			</div>
+		</div>
+	</div>
+
+</c:forEach>
+
+
+
+
+
+<script type="text/javascript"
+	src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+	
+</script>

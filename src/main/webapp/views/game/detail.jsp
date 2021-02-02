@@ -11,6 +11,7 @@ Game's Description: ${game.description} <br>
 Game's demo: <iframe width="420" height="345" src="${game.demo}"></iframe> 
 
 <hr><br>
+
  <h3>Add review for this Game:</h3>
 <form action="${appName}reviews/add" method="post">
 
@@ -27,6 +28,7 @@ Game's demo: <iframe width="420" height="345" src="${game.demo}"></iframe>
 <hr><br>
 
 <h3>Game reviews:</h3>
+
 
 <%--  <c:forEach items="${review.getReviews()}" var="reviews">
 <div> Review Description: ${review.reviewsDes}</div>
