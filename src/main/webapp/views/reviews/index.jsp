@@ -14,7 +14,7 @@
 <td>${reviews.rate}</td>
 
 
- <td><a href="${appName}game/edit?id=${reviews.id}">edit</a>&nbsp;or&nbsp;<a href="${appName}game/delete?id=${reviews.id}">delete</a>
+ <td><a href="${appName}game/edit?id=${reviews.id}">edit</a>place holder <a href="${appName}game/delete?id=${reviews.id}">delete</a>
 </td>
 
 </tr>
