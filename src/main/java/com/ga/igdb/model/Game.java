@@ -15,7 +15,7 @@ public class Game {
 	private String gameName;
 	// cover is a photo of the game
 	private String cover;
-    private int rankNum;
+    private double rankNum;
 	private String companyName;
 	private String console;
 	private Date releaseDate;
@@ -78,10 +78,10 @@ public class Game {
 	public void setCover(String cover) {
 		this.cover = cover;
 	}
-	public int getRankNum() {
+	public double getRankNum() {
 		return rankNum;
 	}
-	public void setRankNum(int rankNum) {
+	public void setRankNum(double rankNum) {
 		this.rankNum = rankNum;
 	}
 	public String getCompanyName() {
