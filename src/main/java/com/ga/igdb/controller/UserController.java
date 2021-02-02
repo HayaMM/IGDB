@@ -80,30 +80,7 @@ public class UserController {
 		return mv;
 	}
 	
-	//method for mapping the post log in page and crypt the password to check if 
-	//the user exists and the password correct 
-//	@PostMapping("/user/login")
-//	public String login(User user) {
-//		
-//		BCryptPasswordEncoder bCrypt = new BCryptPasswordEncoder();
-//		String emailAddress = user.getEmailAddress();
-//		String password = user.getPassWord();
-//		
-//		User matchUser = dao.findByEmailAddress(emailAddress);
-//		if(matchUser != null) {
-//			if(bCrypt.matches(password,matchUser.getPassWord())) {
-//				//Session
-//				HttpSession session = request.getSession();
-//				//get all the user objects in this session
-//				session.setAttribute("user", matchUser);
-//				//get the user role in this session
-//				session.setAttribute("userRole", matchUser.getUserRole());
-//				
-//				return "redirect:/user/profile";		
-//				}
-//		}
-//		return "redirect:/user/login";
-//	}
+	
 	//method for mapping the profile page
 	@GetMapping("/user/profile")
 	public ModelAndView profile() {
@@ -143,29 +120,6 @@ public class UserController {
 		return "redirect:/user/profile";
 		}
 	
-	//method for mapping the logout and redirect to home page
-//	@GetMapping("/user/logout")
-//	public String logout() {
-//		HttpSession session = request.getSession();
-//		//destroy all the user session info
-//		session.invalidate();
-//		
-//		return "redirect:/";
-//	}
-//	
-//	// method for the user log in session
-//	public boolean isUserLoggedIn() {
-//		HttpSession session = request.getSession();
-//
-//		if(session.getAttribute("user")== null) {
-//			return false;
-//			
-//		}
-//		else {
-//			return true;
-//		}
-//	}
 	
-	
-	
+
 }

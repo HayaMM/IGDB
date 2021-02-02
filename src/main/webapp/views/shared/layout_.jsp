@@ -2,6 +2,7 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="security"
 	uri="http://www.springframework.org/security/tags"%>
+	
 
 <!DOCTYPE html>
 <html>
@@ -92,7 +93,7 @@
 							<li class="nav-item"><a class="nav-link active"
 								aria-current="page" href="${appName}">Home</a></li>
 							<li class="nav-item"><a class="nav-link active"
-								aria-current="page" href="${appName}user/login">login</a></li>
+								aria-current="page" href="/igdb/user/login">login</a></li>
 							<li class="nav-item"><a class="nav-link active"
 								aria-current="page" href="${appName}user/signup">sign up</a></li>
 						</ul>

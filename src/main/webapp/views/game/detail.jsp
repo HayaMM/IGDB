@@ -21,24 +21,36 @@
 
 <hr><br>
 
- <h3>Add review for this Game:</h3>
-<form action="${appName}reviews/add" method="post">
+<h3>Add review for ${game.gameName}</h3>
+<form action="${appName}reviews/add?id=${game.id}" method="post">
 
 	<div>
+<<<<<<< HEAD
 		<label>Review Description </label>
 		 <input type="text" name="reviewDes">
 		 <label>Rate score: </label><input type="number" name="rate" min="1" max="5">
+=======
+		 <label>Review description </label>
+		 <input type="text" name="reviewDes"><br>
+		 <label>Your rate from 1 to 5: </label><input type="number" name="rate" min="1" max="5">
+>>>>>>> f3564d667d33f78a0e358566074db60946676868
 	</div>
-<input name="user" type="hidden" value="${user.id}"> 
+<input name="user" type="hidden" value="${user.id}">  
 <input name="game" type="hidden" value="${game.id}">
+<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+
 		<button type="submit">Submit</button>
 
 </form>  
 <hr><br>
 
+<<<<<<< HEAD
 </div>
 
 <h3>Game reviews:</h3>
+=======
+<h3>${game.gameName} reviews:</h3>
+>>>>>>> f3564d667d33f78a0e358566074db60946676868
 
 
 <%--  <c:forEach items="${review.getReviews()}" var="reviews">
@@ -51,6 +63,7 @@
  
     <div>${review.reviewDes}</div>
 	<div> ${review.rate} </div>
+	<hr>
 	</c:if>
 </c:forEach> 
 
