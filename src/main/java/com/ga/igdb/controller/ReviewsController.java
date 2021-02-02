@@ -27,7 +27,7 @@ public class ReviewsController {
 	@Autowired
 	private GameDao gamedao;
 	
-
+	
 	
 	@Autowired
 	HttpServletRequest request;
@@ -38,6 +38,7 @@ public class ReviewsController {
 	public ModelAndView addReview() {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("reviews/add");
+		
 		
 		HomeController hc = new HomeController();
 		hc.setAppName(mv, env);
