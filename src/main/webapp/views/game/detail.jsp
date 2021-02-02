@@ -1,17 +1,21 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <jsp:include page="../shared/layout_.jsp" />
+<link rel="stylesheet" href="css/game_details.css">
 
+<div class="game__details">
 
 <b>Game's Name:</b> ${game.gameName} <br>
 <b>Cover of the game:</b><br>
-<img src="${game.cover}" width="200" height="300"> <br>
+<img src="${game.cover}">
+<br />
 
-<b>Rank Number:</b> ${game.rankNum} <br>
-<b>Game's Company:</b> ${game.companyName} <br>
-<b>Game's Console:</b> ${game.console} <br>
-<b>Game's release date:</b> ${game.releaseDate} <br>
+<b>Rank Number:</b> ${game.rankNum} <br />
+
+<b>Game's Company:</b> ${game.companyName} <br />
+<b>Game's Console:</b> ${game.console} <br />
+<b>Game's release date:</b> ${game.releaseDate} <br />
 <b>Category:</b>${game.category} <br>
-<b>Game's Description:</b> ${game.description} <br>
+<b>Game's Description:</b> ${game.description} <br />
 <b>Game's demo:</b><br />
 <iframe width="420" height="345" src="${game.demo}"></iframe> 
 
@@ -31,6 +35,8 @@
 
 </form>  
 <hr><br>
+
+</div>
 
 <h3>Game reviews:</h3>
 

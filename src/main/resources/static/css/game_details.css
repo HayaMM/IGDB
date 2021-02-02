@@ -1,0 +1,12 @@
+@charset "ISO-8859-1";
+
+table {
+	max-width: 1000px;
+	 justify-content: space-evenly;
+}
+
+.game__details {
+	padding: 20px;
+	border: 2px solid #d1d1d1;
+	width: 100%
+}
