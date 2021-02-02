@@ -1,6 +1,15 @@
 <jsp:include page="../shared/layout_.jsp"/>
+		<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <b>${message}</b>
+<div> 
+    <c:if test="${updatemessage != null}">
+		<div class="alert-success" role="alert">
+			${updatemessage}</div>
+		
+	</c:if>
+</div>
+
 <br>
 <form action="${appName}login" method="post">
 

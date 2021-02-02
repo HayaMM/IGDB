@@ -27,6 +27,17 @@ public class User {
 	private String passWord;
 	private String userRole;
 	
+	private String resetPasswordToken;
+
+	
+	public String getResetPasswordToken() {
+		return resetPasswordToken;
+	}
+
+	public void setResetPasswordToken(String resetPasswordToken) {
+		this.resetPasswordToken = resetPasswordToken;
+	}
+
 	@OneToMany(mappedBy="user")
 	private Set<Reviews> review;
 	
