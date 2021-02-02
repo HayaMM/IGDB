@@ -5,7 +5,7 @@
 <form action="${appName}game/add" method="post">
 	<label>Game's Name: </label><input type="text" name="gameName">
 	<label>Cover of the game: </label><input type="text" name="cover">
-    <label>Rank Number: </label><input type="number" name="rankNum" min="1" max="5"> 
+    <label>Rank Number: </label><input type="number" name="rankNum" min="0" max="5"> 
 	<label>Game's Company: </label><input type="text" name="companyName">
 	<label>Game's Console: </label><input type="text" name="console">
 	<label>Game's release date: </label><input type="date"
