@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+//import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
 import com.ga.igdb.dao.GameDao;
 import com.ga.igdb.dao.ReviewsDao;
 import com.ga.igdb.model.Reviews;
@@ -27,7 +29,7 @@ public class ReviewsController {
 	@Autowired
 	private GameDao gamedao;
 	
-
+	
 	
 	@Autowired
 	HttpServletRequest request;
@@ -38,6 +40,7 @@ public class ReviewsController {
 	public ModelAndView addReview() {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("reviews/add");
+		
 		
 		HomeController hc = new HomeController();
 		hc.setAppName(mv, env);
@@ -51,10 +54,12 @@ public class ReviewsController {
 	
 	//Post - Review Add
 	@PostMapping("/reviews/add")
-	public String addReview(Reviews reviews) {
+	public String addReview(Reviews reviews, @RequestParam int id) {
+		System.out.print("you are here");
 		reviewsdao.save(reviews);
 		
-		return "redirect:/reviews/index";
+
+		return "redirect:/game/detail?id="+id;
 	}
 	
 	//Get - Review Index
