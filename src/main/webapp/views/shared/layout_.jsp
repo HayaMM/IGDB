@@ -62,13 +62,13 @@
 							<li class="nav-item"><a class="nav-link active"
 								aria-current="page" href="${appName}logout">logout</a></li>
 							<li class="nav-item dropdown"><a
-								class="nav-link dropdown-toggle nav-link active" href="#" id="navbarDropdown"
+								class="nav-link dropdown-toggle active" href="#" id="navbarDropdown"
 								role="button" data-bs-toggle="dropdown" aria-expanded="false">
 									Games</a>
 								<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-									<li><a class="dropdown-item" href="${app.name}game/index">All
+									<li><a class="dropdown-item" href="${appName}game/index">All
 									</a></li>
-									<li><a class="dropdown-item" href="${app.name}game/add">Add
+									<li><a class="dropdown-item" href="${appName}game/add">Add
 									</a></li>
 								</ul></li>
 						</ul>

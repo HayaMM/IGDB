@@ -13,6 +13,7 @@
 							<img class="card__image"
 								src="images/the-legend-of-zelda-breath-of-the-wild-switch-hero.jpg" alt="">
 							<div class="card__content">
+								<p><b>Title: </b>Zelda: Breath of the Wild</p>
 								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
 									Eos ducimus id ab tenetur delectus reiciendis fugit autem qui
 									at.</p>
