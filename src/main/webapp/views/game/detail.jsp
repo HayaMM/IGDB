@@ -17,7 +17,7 @@ Game's demo: <iframe width="420" height="345" src="${game.demo}"></iframe>
 	<div>
 		<label>Review Description </label>
 		 <input type="text" name="reviewDes">
-		 <label>Rank Number: </label><input type="number" name="rankNum" min="1" max="5">
+		 <label>Rank Number: </label><input type="number" name="rate" min="1" max="5">
 	</div>
 <input name="user" type="hidden" value="${user.id}"> 
 <input name="game" type="hidden" value="${game.id}">

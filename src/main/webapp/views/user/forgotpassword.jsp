@@ -13,10 +13,13 @@
                         <td><input  type="text" name="emailAddress"></input></td>
                     </tr>
                     <tr>
+                    
                         <td><input type="reset" value="Clear"/></td>
                         <td><input type="submit" value="Reset Password"></input></td>
                     </tr>
                 </table>
+                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+                
             </form>
         
     </body>
