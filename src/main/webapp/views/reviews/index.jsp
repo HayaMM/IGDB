@@ -1,6 +1,5 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <jsp:include page="../shared/layout_.jsp" />
-${id}
 <table>
 <tr>
 <th>Review description</th> 
