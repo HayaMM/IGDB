@@ -28,7 +28,6 @@ public class GameController {
 	// get route add game
 	@GetMapping("/game/add")
 	public ModelAndView addGame() {
-		System.out.println("this is add games");
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("game/add");
 		HomeController hc = new HomeController();
