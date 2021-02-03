@@ -71,6 +71,9 @@ public class GameController {
 		Game game=gdao.findById(id);
 		ModelAndView mv = new ModelAndView();
 	    mv.setViewName("game/detail");
+//	    double rank = rdao.total(id);
+//	    
+//System.out.println("raankkk"+rank);
 	    mv.addObject("game", game);
 
 	    HomeController hc = new HomeController();
