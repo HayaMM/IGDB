@@ -6,10 +6,10 @@
 
 
 
-
+<div class="cards">
 <c:forEach items="${games}" var="game">
 
-	<div class="cards">
+	
 		<div class="card">
 			<img class="card__image" src="${game.cover}" alt="">
 			<div class="card__content">
@@ -24,10 +24,10 @@
 				</div>
 			</div>
 		</div>
-	</div>
+
 </c:forEach>
 
-
+	</div>
 
 
 

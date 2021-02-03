@@ -1,5 +1,6 @@
 package com.ga.igdb.controller;
 
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -83,11 +84,12 @@ public class UserController {
 	
 	//method for mapping the profile page
 	@GetMapping("/user/profile")
-	public ModelAndView profile() {
+	public ModelAndView profile(@RequestParam int id) {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("user/profile");
-		// take user info from game/review table
-		
+		User user = dao.findById(id); 
+	    mv.addObject("user", user);
+	    
 		HomeController hc = new HomeController();
 		hc.setAppName(mv, env);
 		return mv;
@@ -107,9 +109,10 @@ public class UserController {
 	}
 	
 	@PostMapping("/user/edit")
-	public String edit(User user) {
+	public String edit(User user,HttpServletRequest request) {
 		ModelAndView mv = new ModelAndView();
-
+		  
+		
 		String emailAddress = user.getEmailAddress();
 		User userct =  dao.findByEmailAddress(emailAddress);
 		user.setCreateAt(userct.getCreateAt());
@@ -121,5 +124,4 @@ public class UserController {
 		}
 	
 	
-
 }

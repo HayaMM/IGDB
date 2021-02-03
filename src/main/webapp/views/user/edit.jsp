@@ -1,7 +1,11 @@
 <jsp:include page="../shared/layout_.jsp" />
 
-<form action="${appName}user/edit" method="post">
+<form action="${appName}user/edit" method="post" enctype="multipart/form-data">
+
+
+
 	<div class="form-group">
+	
 		<label>First Name</label><input type="text" name="firstName"
 			value="${user.firstName}" class="form-control">
 	</div>

@@ -3,79 +3,138 @@
 body {
 	padding: 20px;
 	background-color: #ffffff;
+	
 }
 
+img {
+	width: 350px;
+	height: 500px;
+}
 
+/* add game even row style */
+/* 
+.even_row_color col-md-4:nth-of-type(even) {
+  background-color: #f3f3f3;
+} */
+.col-md-4 {
+	padding-top: 10px; 
+	
+	font-size: 110%;
+	font-weight: bold;
+	border: 1px solid #cbcbcb;
+	padding: 5px;
+	margin-top: 10px;
+	margin-right: 10px;
+	margin-left: 10px;
+	border-radius: 5px;
+	justify-content: space-evenly;
+}
 
-
-
-
-
+/* 
+home page style cards  */
 .cards {
-    margin: 0 auto;
-    max-width: 1000px;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
-    grid-auto-rows: auto;
-    gap: 20px;
-    font-family: sans-serif;
-    padding-top: 30px;
+	margin: 0 auto;
+	max-width: 1000px;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
+	grid-auto-rows: auto;
+	gap: 20px;
+	font-family: sans-serif;
+	padding-top: 30px;
 }
 
 .cards * {
-    box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 .card__image {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    display: block;
-    border-top: 2px solid #333333;
-    border-right: 2px solid #333333;
-    border-left: 2px solid #333333;
+	width: 100%;
+	height: 250px;
+	object-fit: cover;
+	display: block;
+	border-top: 2px solid #333333;
+	border-right: 2px solid #333333;
+	border-left: 2px solid #333333;
 }
 
 .card__content {
-    line-height: 1.5;
-    font-size: 0.9em;
-    padding: 15px;
-    background: #fafafa;
-    border-right: 2px solid #333333;
-    border-left: 2px solid #333333;
+	line-height: 1.5;
+	font-size: 0.9em;
+	padding: 15px;
+	background: #fafafa;
+	border-right: 2px solid #333333;
+	border-left: 2px solid #333333;
 }
 
-.card__content > p:first-of-type {
-    margin-top: 0;
+.card__content>p:first-of-type {
+	margin-top: 0;
 }
 
-.card__content > p:last-of-type {
-    margin-bottom: 0;
+.card__content>p:last-of-type {
+	margin-bottom: 0;
 }
 
 .card__info {
-    padding: 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: #555555;
-    background: #eeeeee;
-    font-size: 0.8em;
-    border-bottom: 2px solid #333333;
-    border-right: 2px solid #333333;
-    border-left: 2px solid #333333;
+	padding: 15px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	color: #555555;
+	background: #eeeeee;
+	font-size: 0.8em;
+	border-bottom: 2px solid #333333;
+	border-right: 2px solid #333333;
+	border-left: 2px solid #333333;
 }
 
 .card__info i {
-    font-size: 0.9em;
-    margin-right: 8px;
+	font-size: 0.9em;
+	margin-right: 8px;
 }
 
 .card__link {
-    color: #64968c;
-    text-decoration: none;
+	color: #64968c;
+	text-decoration: none;
 }
 
 .card__link:hover {
-    text-decoration: underline;
+	text-decoration: underline;
+}
+
+/* game details style */
+* {
+	font-family: sans-serif; /* Change your font family */
+}
+
+.game__details {
+	border-collapse: collapse;
+	margin: 25px 0;
+	font-size: 0.9em;
+	min-width: 400px;
+	border-radius: 5px 5px 0 0;
+	overflow: hidden;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.game__details thead tr {
+	background-color: #009879;
+	color: #ffffff;
+	text-align: left;
+	font-weight: bold;
+}
+
+.game__details th, .game__details td {
+	padding: 12px 15px;
+}
+
+.game__details tbody tr {
+	border-bottom: 1px solid #dddddd;
+}
+
+.game__details tbody tr:nth-of-type(even) {
+	background-color: #f3f3f3;
+}
+
+.game__details tbody tr:last-of-type {
+	border-bottom: 2px solid #009879;
 }

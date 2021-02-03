@@ -28,7 +28,6 @@ public class User {
 	private String userRole;
 	
 	private String resetPasswordToken;
-
 	
 	public String getResetPasswordToken() {
 		return resetPasswordToken;
