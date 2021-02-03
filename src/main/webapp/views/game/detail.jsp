@@ -1,6 +1,8 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 <jsp:include page="../shared/layout_.jsp" />
+<%@ taglib prefix="security"
+	uri="http://www.springframework.org/security/tags"%>
 
 
 Game's Name: ${game.gameName} <br>
@@ -18,18 +20,20 @@ Game's demo: <iframe width="420" height="345" src="${game.demo}"></iframe>
 <hr><br>
 
  <h3>Add review for this Game:</h3>
-<form action="${appName}reviews/add" method="post">
+<form action="${appName}reviews/add?id=${game.id}" method="post">
 
 	<div>
 		<label>Review Description </label>
 		 <input type="text" name="reviewDes">
-		 <label>Rate score: </label><input type="number" name="rate" min="1" max="5">
+		 <label>Rate score: </label>
+		 <input type="number" name="rate" min="1" max="5">
 	</div>
-<input name="user" type="hidden" value="${user.id}"> 
+<input name="user" type="hidden" value="<security:authentication property="principal.id"/>">
 <input name="game" type="hidden" value="${game.id}">
 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 
 		<button type="submit">Submit</button>
+		
 
 </form>  
 <hr><br>
@@ -49,8 +53,11 @@ Game's demo: <iframe width="420" height="345" src="${game.demo}"></iframe>
 <div> Review Description: ${review.reviewsDes}</div>
 	<div> Rate: ${review.rate} </div>
 </c:forEach>  --%>
-<c:forEach items="${reviews}" var="review">
- <c:if test="${game.id == review.game.id && user.id == review.user.id}">
+
+
+<%--  <c:forEach items="${reviews}" var="review">
+ <c:if test="${game.id == review.game.id }">
+ 
     <div>${review.reviewDes}</div>
 	<div> ${review.rate} </div>
 	
@@ -58,8 +65,20 @@ Game's demo: <iframe width="420" height="345" src="${game.demo}"></iframe>
 	<hr>
 
 	</c:if>
-<%-- 	</c:if> --%>
-</c:forEach> 
+
+</c:forEach>  --%>
+
+<c:forEach items="${game.getReviews()}" var="review">
+
+	<div class="cards">
+		<div class="card">
+			<div class="card__content"><p>${review.reviewDes}</p></div>
+			<div class="card__content"><p>${review.rate}</p></div>
+			<div><a href="${appName}game/detail?id=${game.id}" class="card__link">View</a></div>
+			</div>
+		</div>
+</c:forEach>
+
 
 <%-- <c:forEach items="${reviews}" var="review">
 <tr>

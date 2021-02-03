@@ -58,11 +58,17 @@ public class ReviewsController {
 	//Post - Review Add
 	@PostMapping("/reviews/add")
 	public String addReview(Reviews reviews, @RequestParam int id) {
-		System.out.print("you are here");
+		System.out.print("---------------you are here"+id);
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("game/index");
 		reviewsdao.save(reviews);
 		
-
-		return "redirect:/game/detail?id="+id;
+		HomeController hc = new HomeController();
+		hc.setAppName(mv, env);
+		
+		
+		
+		 return "redirect:/game/detail?id="+id;
 	}
 	
 	//Get - Review Index
