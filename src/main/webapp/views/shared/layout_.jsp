@@ -2,7 +2,7 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="security"
 	uri="http://www.springframework.org/security/tags"%>
-	
+
 
 <!DOCTYPE html>
 <html>
@@ -56,7 +56,8 @@
 								aria-current="page" href="${appName}">Home</a></li>
 
 							<li class="nav-item"><a class="nav-link active"
-								aria-current="page" href="${appName}user/profile?id=<security:authentication property="principal.id"/>">profile</a></li>
+								aria-current="page"
+								href="${appName}user/profile?id=<security:authentication property="principal.id"/>">profile</a></li>
 							<li class="nav-item"><a class="nav-link active"
 								aria-current="page"
 								href="${appName}user/edit?id=<security:authentication property="principal.id"/>">edit
@@ -64,30 +65,32 @@
 							<li class="nav-item"><a class="nav-link active"
 								aria-current="page" href="${appName}logout">logout</a></li>
 
-						
-								<!--  user drop down-->
-								
-								<li class="nav-item dropdown"><a
-								class="nav-link dropdown-toggle active" href="#" id="navbarDropdown"
-								role="button" data-bs-toggle="dropdown" aria-expanded="false">
-									User</a>
+							<!--  user drop down-->
+
+							<li class="nav-item dropdown"><a
+								class="nav-link dropdown-toggle active" href="#"
+								id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+								aria-expanded="false"> User</a>
+
 								<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 									<li><a class="dropdown-item" href="${appName}user/profile">profile
 									</a></li>
-									<li><a class="dropdown-item" href="${appName}user/edit?id=<security:authentication property="principal.id"/>">edit
-									profile
-									</a></li>
-										<li><a class="dropdown-item" href="${appName}logout">logout
+									<li><a class="dropdown-item"
+										href="${appName}user/edit?id=<security:authentication property="principal.id"/>">edit
+											profile </a></li>
+									<li><a class="dropdown-item" href="${appName}logout">logout
 									</a></li>
 								</ul></li>
+
 								
 								<!-- game drop down -->
 								
 
+
 							<li class="nav-item dropdown"><a
-								class="nav-link dropdown-toggle active" href="#" id="navbarDropdown"
-								role="button" data-bs-toggle="dropdown" aria-expanded="false">
-									Games</a>
+								class="nav-link dropdown-toggle active" href="#"
+								id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+								aria-expanded="false"> Games</a>
 								<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 									<li><a class="dropdown-item" href="${appName}game/index">All
 									</a></li>
@@ -117,7 +120,7 @@
 						aria-label="Search">
 					<button class="btn btn-outline-success" type="submit">Search</button>
 				</form>
-				
+
 			</div>
 		</div>
 	</nav>

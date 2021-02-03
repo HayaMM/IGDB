@@ -72,8 +72,7 @@ public class GameController {
 		ModelAndView mv = new ModelAndView();
 	    mv.setViewName("game/detail");
 	    mv.addObject("game", game);
-	    var itr= rdao.findAll();
-	    mv.addObject("reviews", itr);
+
 	    HomeController hc = new HomeController();
 	    hc.setAppName(mv, env);
 

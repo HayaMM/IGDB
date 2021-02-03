@@ -23,8 +23,8 @@
 		</select>
 	</div>
 	<br> <input name="passWord" type="hidden" value="${user.passWord}">
-	<input name="id" type="hidden" value="${user.id}"> <input
-		name="emailAddress" type="hidden" value="${user.emailAddress}">
+	<input name="id" type="hidden" value="${user.id}"> 
+	<input name="emailAddress" type="hidden" value="${user.emailAddress}">
 
 	<br>
 	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
