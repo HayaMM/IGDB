@@ -74,7 +74,7 @@
 								aria-expanded="false"> User</a>
 
 								<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-									<li><a class="dropdown-item" href="${appName}user/profile">profile
+									<li><a class="dropdown-item" href="${appName}user/profile?id=<security:authentication property="principal.id"/>">profile
 									</a></li>
 									<li><a class="dropdown-item"
 										href="${appName}user/edit?id=<security:authentication property="principal.id"/>">edit

@@ -30,6 +30,7 @@ Game's demo: <iframe width="420" height="345" src="${game.demo}"></iframe>
 	</div>
 <input name="user" type="hidden" value="<security:authentication property="principal.id"/>">
 <input name="game" type="hidden" value="${game.id}">
+
 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 
 		<button type="submit">Submit</button>
@@ -49,27 +50,8 @@ Game's demo: <iframe width="420" height="345" src="${game.demo}"></iframe>
 
 
 
-<%--  <c:forEach items="${review.getReviews()}" var="reviews">
-<div> Review Description: ${review.reviewsDes}</div>
-	<div> Rate: ${review.rate} </div>
-</c:forEach>  --%>
-
-
-<%--  <c:forEach items="${reviews}" var="review">
- <c:if test="${game.id == review.game.id }">
- 
-    <div>${review.reviewDes}</div>
-	<div> ${review.rate} </div>
-	
-	
-	<hr>
-
-	</c:if>
-
-</c:forEach>  --%>
-
 <c:forEach items="${game.getReviews()}" var="review">
-
+<b>${rank}</b>
 	<div class="cards">
 		<div class="card">
 			<div class="card__content"><p>${review.reviewDes}</p></div>

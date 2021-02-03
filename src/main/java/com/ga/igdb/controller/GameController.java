@@ -50,26 +50,19 @@ public class GameController {
 	    mv.setViewName("game/index");
 	    mv.addObject("games", it);
 	    
-//	    var itr= rdao.findAll();
-//	    mv.addObject("review", itr);
 	    HomeController hc = new HomeController();
 	    hc.setAppName(mv, env);
 	    return mv;
 	}
 	
-	// get route game details  
-//	@PostMapping("/game/detail")
-//	public String addgamere(Reviews reviews) {
-//rdao.save(reviews);
-//		
-//		return "redirect:/game/detail";
-//	}
+	
 	// get route game details  
 	@GetMapping("/game/detail")
 	public ModelAndView gameDetails(@RequestParam int id) {
 		Game game=gdao.findById(id);
 		ModelAndView mv = new ModelAndView();
 	    mv.setViewName("game/detail");
+	    
 	    mv.addObject("game", game);
 
 

@@ -91,8 +91,7 @@
 			name="demo" class="form-control" required>
 			 <input name="user" type="hidden" value="<security:authentication property="principal.id"/>"> <br />
 		<button class="btn btn-primary" type="submit">Add the Game</button>
-		<input type="hidden" name="${_csrf.parameterName}"
-			value="${_csrf.token}" />
+		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 	</div>
 
 
