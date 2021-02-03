@@ -14,8 +14,11 @@ import org.springframework.web.servlet.ModelAndView;
 import com.ga.igdb.dao.GameDao;
 import com.ga.igdb.dao.ReviewsDao;
 import com.ga.igdb.model.Reviews;
-
+import com.ga.igdb.model.UserDetailsImp;
 import org.springframework.core.env.Environment;
+import org.springframework.security.authentication.AnonymousAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 
 @Controller
 public class ReviewsController {
@@ -80,6 +83,10 @@ public class ReviewsController {
 		mv.setViewName("reviews/index");
 		mv.addObject("review", it);
 		
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		if (!(authentication instanceof AnonymousAuthenticationToken)) {
+		    mv.addObject("id", ((UserDetailsImp) authentication.getPrincipal()).getId());  
+		}
 		HomeController hc = new HomeController();
 		hc.setAppName(mv, env);
 		
@@ -113,7 +120,7 @@ public class ReviewsController {
 		
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("reviews/edit");
-		mv.addObject("review", reviews);
+		mv.addObject("reviews", reviews);
 		
 		HomeController hc = new HomeController();
 		hc.setAppName(mv, env);
@@ -123,6 +130,16 @@ public class ReviewsController {
 		
 
 		return mv;
+	}
+	
+	//Post - Review edit
+	@PostMapping("/reviews/edit")
+	public String editReview(Reviews reviews, @RequestParam int id) {
+		System.out.print("you are here");
+		reviewsdao.save(reviews);
+		
+
+		return "redirect:/reviews/index?id="+id;
 	}
 	
 	//Get - Review Delete

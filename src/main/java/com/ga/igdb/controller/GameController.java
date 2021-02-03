@@ -10,7 +10,6 @@ import org.springframework.web.servlet.ModelAndView;
 import com.ga.igdb.dao.GameDao;
 import com.ga.igdb.dao.ReviewsDao;
 import com.ga.igdb.model.Game;
-import com.ga.igdb.model.Reviews;
 
 
 @Controller
@@ -65,6 +64,7 @@ public class GameController {
 	    mv.setViewName("game/detail");
 	    
 	    mv.addObject("game", game);
+
 
 	    HomeController hc = new HomeController();
 	    hc.setAppName(mv, env);

@@ -7,7 +7,11 @@
 
 <th>Modify</th>
 </tr>
+
 <c:forEach items="${review}" var="reviews">
+
+ <c:if test="${reviews.user.id == id}">
+
 <tr>
 <td>${reviews.reviewDes}</td>
 <td>${reviews.rate}</td>
@@ -18,5 +22,8 @@
 </td>
 
 </tr>
+</c:if> 
 </c:forEach>
+
 </table>
+<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
