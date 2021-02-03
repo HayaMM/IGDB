@@ -1,5 +1,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <jsp:include page="../shared/layout_.jsp" />
+<%@ taglib prefix="security"
+	uri="http://www.springframework.org/security/tags"%>
 
 
 <b>Game's Name:</b> ${game.gameName} <br>
@@ -25,9 +27,10 @@
 	<div>
 		<label>Review Description </label>
 		 <input type="text" name="reviewDes">
-		 <label>Rate score: </label><input type="number" name="rate" min="1" max="5">
+		 <label>Rate score: </label>
+		 <input type="number" name="rate" min="1" max="5">
 	</div>
-<input name="user" type="hidden" value="${user.id}"> 
+<input name="user" type="hidden" value="<security:authentication property="principal.id"/>">
 <input name="game" type="hidden" value="${game.id}">
 		<button type="submit">Submit</button>
 
@@ -44,13 +47,25 @@
 	<div> Rate: ${review.rate} </div>
 </c:forEach>  --%>
 
- <c:forEach items="${reviews}" var="review">
+<%--  <c:forEach items="${reviews}" var="review">
  <c:if test="${game.id == review.game.id }">
  
     <div>${review.reviewDes}</div>
 	<div> ${review.rate} </div>
 	</c:if>
-</c:forEach> 
+</c:forEach>  --%>
+
+<c:forEach items="${game.getReviews()}" var="review">
+
+	<div class="cards">
+		<div class="card">
+			<div class="card__content"><p>${review.reviewDes}</p></div>
+			<div class="card__content"><p>${review.rate}</p></div>
+			<div><a href="${appName}game/detail?id=${game.id}" class="card__link">View</a></div>
+			</div>
+		</div>
+</c:forEach>
+
 
 
 <br>

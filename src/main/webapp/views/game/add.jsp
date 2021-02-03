@@ -1,5 +1,8 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <jsp:include page="../shared/layout_.jsp" />
+<%@ taglib prefix="security"
+	uri="http://www.springframework.org/security/tags"%>
+
 
 
 <script
@@ -65,7 +68,7 @@
 
 
 	<div class="col-md-4">
-		<label class="form-label">Category: release date:</label> <input
+		<label class="form-label">release date:</label> <input
 			type="text" name="category" class="form-control" required>
 	</div>
 
@@ -82,16 +85,11 @@
 	</div>
 
 
-	<div class="col-md-4">
-		<label class="form-label">Description: </label> <input type="text"
-			name="description" class="form-control" required>
-	</div>
-
 
 	<div class="col-md-4">
 		<label class="form-label">Game's demo: </label> <input type="text"
-			name="demo" class="form-control" required> <input name="user"
-			type="hidden" value="${user.id}"> <br />
+			name="demo" class="form-control" required>
+			 <input name="user" type="hidden" value="<security:authentication property="principal.id"/>"> <br />
 		<button class="btn btn-primary" type="submit">Add the Game</button>
 		<input type="hidden" name="${_csrf.parameterName}"
 			value="${_csrf.token}" />

@@ -109,18 +109,19 @@ public class UserController {
 	}
 	
 	@PostMapping("/user/edit")
-	public String edit(User user,HttpServletRequest request) {
+	public ModelAndView edit(User user,@RequestParam(value = "id", required =false)int id) {
 		ModelAndView mv = new ModelAndView();
-		  
-		
+		mv.setViewName("user/profile");
+
 		String emailAddress = user.getEmailAddress();
 		User userct =  dao.findByEmailAddress(emailAddress);
+		userct.setId(id);
 		user.setCreateAt(userct.getCreateAt());
 		dao.save(user);
 		
 		HomeController hc = new HomeController();
 		hc.setAppName(mv, env);
-		return "redirect:/user/profile";
+		return mv;
 		}
 	
 	
