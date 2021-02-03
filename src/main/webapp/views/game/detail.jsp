@@ -22,7 +22,7 @@
 <hr><br>
 
  <h3>Add review for this Game:</h3>
-<form action="${appName}reviews/add" method="post">
+<form action="${appName}reviews/add?id=${game.id}" method="post">
 
 	<div>
 		<label>Review Description </label>
@@ -32,9 +32,10 @@
 	</div>
 <input name="user" type="hidden" value="<security:authentication property="principal.id"/>">
 <input name="game" type="hidden" value="${game.id}">
-		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 
+<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 		<button type="submit">Submit</button>
+		
 
 </form>  
 <hr><br>
