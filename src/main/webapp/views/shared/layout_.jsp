@@ -55,7 +55,7 @@
 							<li class="nav-item"><a class="nav-link active"
 								aria-current="page" href="${appName}">Home</a></li>
 							<li class="nav-item"><a class="nav-link active"
-								aria-current="page" href="${appName}user/profile">profile</a></li>
+								aria-current="page" href="${appName}user/profile?id=<security:authentication property="principal.id"/>">profile</a></li>
 							<li class="nav-item"><a class="nav-link active"
 								aria-current="page"
 								href="${appName}user/edit?id=<security:authentication property="principal.id"/>">edit
