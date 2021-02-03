@@ -4,6 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -53,19 +54,21 @@ public class ReviewsController {
 	}
 	
 	//Post - Review Add
+	@Transactional
 	@PostMapping("/reviews/add")
-	public String addReview(Reviews reviews, @RequestParam int id) {
-		System.out.print("---------------you are here"+id);
+	public ModelAndView addReview(Reviews reviews, @RequestParam int id) {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("game/index");
 		reviewsdao.save(reviews);
 		
+		int rank=reviewsdao.getrank(id);
 		HomeController hc = new HomeController();
 		hc.setAppName(mv, env);
 		
+		gamedao.setrank(id, rank);		
 		
 		
-		 return "redirect:/game/detail?id="+id;
+		return mv;
 	}
 	
 	//Get - Review Index

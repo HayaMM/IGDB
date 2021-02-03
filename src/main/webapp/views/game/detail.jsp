@@ -45,19 +45,6 @@
 <h3>Game reviews:</h3>
 
 
-<%--  <c:forEach items="${review.getReviews()}" var="reviews">
-<div> Review Description: ${review.reviewsDes}</div>
-	<div> Rate: ${review.rate} </div>
-</c:forEach>  --%>
-
-<%--  <c:forEach items="${reviews}" var="review">
- <c:if test="${game.id == review.game.id }">
- 
-    <div>${review.reviewDes}</div>
-	<div> ${review.rate} </div>
-	</c:if>
-</c:forEach>  --%>
-
 <c:forEach items="${game.getReviews()}" var="review">
 <b>${rank}</b>
 	<div class="cards">
