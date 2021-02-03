@@ -1,6 +1,6 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <jsp:include page="../shared/layout_.jsp" />
-${name}
+${id}
 <table>
 <tr>
 <th>Review description</th> 
@@ -11,10 +11,10 @@ ${name}
 
 <c:forEach items="${review}" var="reviews">
 
-<%-- <c:if test="${reviews.user.emailAddress ==name }">
- --%>
+ <c:if test="${reviews.user.id == id}">
+
 <tr>
-<td>${reviews.user}</td>
+<td>${reviews.reviewDes}</td>
 <td>${reviews.rate}</td>
 
 
@@ -23,7 +23,7 @@ ${name}
 </td>
 
 </tr>
-<%-- </c:if> --%>
+</c:if> 
 </c:forEach>
 
 </table>

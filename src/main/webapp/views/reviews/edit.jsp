@@ -8,6 +8,8 @@
 <input type="hidden" name="id" value="${reviews.id}">
 <%-- <input type="hidden" name="id" value="${user.id}">
  --%>
+<input name="user" type="hidden" value="${reviews.user.id}">
+ 
 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 
 <button type="submit"> edit the review </button>

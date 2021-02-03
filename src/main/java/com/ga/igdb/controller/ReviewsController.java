@@ -82,7 +82,7 @@ public class ReviewsController {
 		
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 		if (!(authentication instanceof AnonymousAuthenticationToken)) {
-		    mv.addObject("name", ((UserDetailsImp) authentication.getPrincipal()).getUsername());  
+		    mv.addObject("id", ((UserDetailsImp) authentication.getPrincipal()).getId());  
 		}
 		HomeController hc = new HomeController();
 		hc.setAppName(mv, env);
