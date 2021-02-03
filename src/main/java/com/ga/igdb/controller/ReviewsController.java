@@ -54,7 +54,7 @@ public class ReviewsController {
 	
 	//Post - Review Add
 	@PostMapping("/reviews/add")
-	public ModelAndView addReview(Reviews reviews, @RequestParam int id) {
+	public String addReview(Reviews reviews, @RequestParam int id) {
 		System.out.print("---------------you are here"+id);
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("game/index");
@@ -65,7 +65,7 @@ public class ReviewsController {
 		
 		
 		
-		return mv;
+		 return "redirect:/game/detail?id="+id;
 	}
 	
 	//Get - Review Index

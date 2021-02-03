@@ -64,12 +64,14 @@
 									profile</a></li>
 							<li class="nav-item"><a class="nav-link active"
 								aria-current="page" href="${appName}logout">logout</a></li>
+
 							<!--  user drop down-->
 
 							<li class="nav-item dropdown"><a
 								class="nav-link dropdown-toggle active" href="#"
 								id="navbarDropdown" role="button" data-bs-toggle="dropdown"
 								aria-expanded="false"> User</a>
+
 								<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 									<li><a class="dropdown-item" href="${appName}user/profile">profile
 									</a></li>
@@ -80,7 +82,11 @@
 									</a></li>
 								</ul></li>
 
-							<!-- game drop down -->
+								
+								<!-- game drop down -->
+								
+
+
 							<li class="nav-item dropdown"><a
 								class="nav-link dropdown-toggle active" href="#"
 								id="navbarDropdown" role="button" data-bs-toggle="dropdown"
