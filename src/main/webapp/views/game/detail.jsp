@@ -22,7 +22,7 @@
 <hr><br>
 
  <h3>Add review for this Game:</h3>
-<form action="${appName}reviews/add" method="post">
+<form action="${appName}reviews/add?id=${game.id}" method="post">
 
 	<div>
 		<label>Review Description </label>
