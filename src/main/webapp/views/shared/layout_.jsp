@@ -54,7 +54,7 @@
 						<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 							<li class="nav-item"><a class="nav-link active"
 								aria-current="page" href="${appName}">Home</a></li>
-<<<<<<< HEAD
+
 							<li class="nav-item"><a class="nav-link active"
 								aria-current="page" href="${appName}user/profile?id=<security:authentication property="principal.id"/>">profile</a></li>
 							<li class="nav-item"><a class="nav-link active"
@@ -63,7 +63,7 @@
 									profile</a></li>
 							<li class="nav-item"><a class="nav-link active"
 								aria-current="page" href="${appName}logout">logout</a></li>
-=======
+
 						
 								<!--  user drop down-->
 								
@@ -83,7 +83,7 @@
 								
 								<!-- game drop down -->
 								
->>>>>>> 72565edc1e32761684188ee02bd674ee088b8b02
+
 							<li class="nav-item dropdown"><a
 								class="nav-link dropdown-toggle active" href="#" id="navbarDropdown"
 								role="button" data-bs-toggle="dropdown" aria-expanded="false">

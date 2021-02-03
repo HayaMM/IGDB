@@ -29,7 +29,9 @@
 	</div>
 <input name="user" type="hidden" value="${user.id}"> 
 <input name="game" type="hidden" value="${game.id}">
+<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 		<button type="submit">Submit</button>
+		
 
 </form>  
 <hr><br>
