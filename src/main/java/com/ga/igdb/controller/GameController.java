@@ -75,6 +75,8 @@ public class GameController {
 	    mv.addObject("game", game);
 	    var itr= rdao.findAll();
 	    mv.addObject("reviews", itr);
+	    var t= rdao.findAll();
+	    mv.addObject("username", t);
 	    HomeController hc = new HomeController();
 	    hc.setAppName(mv, env);
 

@@ -9,6 +9,8 @@
 <label>Rank Number: </label><input type="number" name="rate" min="1" max="5"> 
 
 <input name="user" type="hidden" value="${user.id}">
+<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+
 <button type="submit"> Add the Review </button>
 
 </form>  

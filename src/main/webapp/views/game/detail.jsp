@@ -1,5 +1,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 <jsp:include page="../shared/layout_.jsp" />
+
 Game's Name: ${game.gameName} <br>
 Cover of the game: <img src="${game.cover}" width="200" height="300"> <br>
 Rank Number: ${game.rankNum} <br>
@@ -22,28 +24,45 @@ Game's demo: <iframe width="420" height="345" src="${game.demo}"></iframe>
 	</div>
 <input name="user" type="hidden" value="${user.id}">  
 <input name="game" type="hidden" value="${game.id}">
-
+<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 		<button type="submit">Submit</button>
 
 </form>  
 <hr><br>
-
-<h3>${game.gameName} reviews:</h3>
+ 
+<a href="${appName}reviews/index?id=${game.id}">My reviews</a>
+ <br>
+ <h3>${game.gameName} reviews:</h3>
 
 
 <%--  <c:forEach items="${review.getReviews()}" var="reviews">
 <div> Review Description: ${review.reviewsDes}</div>
 	<div> Rate: ${review.rate} </div>
 </c:forEach>  --%>
-
- <c:forEach items="${reviews}" var="review">
- <c:if test="${game.id == review.game.id }">
- 
+<c:forEach items="${reviews}" var="review">
+ <c:if test="${game.id == review.game.id && user.id == review.user.id}">
     <div>${review.reviewDes}</div>
 	<div> ${review.rate} </div>
+	
+	
 	<hr>
 	</c:if>
+<%-- 	</c:if> --%>
 </c:forEach> 
 
+<%-- <c:forEach items="${reviews}" var="review">
+<tr>
+<td>${review.reviewDes}</td> 
 
+<td>${review.rate}</td>
+	<security:authorize access="isAuthenticated()">
+				<td><a href="${appName}reviews/edit?id=${review.id}">Edit</a> 
+				<security:authorize access="hasRole('ADMIN')">
+			 | <a href="${appName}reviews/delete?id=${review.id}">Delete</a></td>
+			</security:authorize>
+			</security:authorize>
+
+
+</tr>
+</c:forEach> --%>
 <br>

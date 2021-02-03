@@ -1,5 +1,6 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <jsp:include page="../shared/layout_.jsp" />
+${name}
 <table>
 <tr>
 <th>Review description</th> 
@@ -7,9 +8,13 @@
 
 <th>Modify</th>
 </tr>
+
 <c:forEach items="${review}" var="reviews">
+
+<%-- <c:if test="${reviews.user.emailAddress ==name }">
+ --%>
 <tr>
-<td>${reviews.reviewDes}</td>
+<td>${reviews.user}</td>
 <td>${reviews.rate}</td>
 
 
@@ -18,5 +23,8 @@
 </td>
 
 </tr>
+<%-- </c:if> --%>
 </c:forEach>
+
 </table>
+<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
