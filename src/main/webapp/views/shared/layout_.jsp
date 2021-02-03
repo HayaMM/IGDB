@@ -54,6 +54,7 @@
 						<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 							<li class="nav-item"><a class="nav-link active"
 								aria-current="page" href="${appName}">Home</a></li>
+<<<<<<< HEAD
 							<li class="nav-item"><a class="nav-link active"
 								aria-current="page" href="${appName}user/profile?id=<security:authentication property="principal.id"/>">profile</a></li>
 							<li class="nav-item"><a class="nav-link active"
@@ -62,6 +63,27 @@
 									profile</a></li>
 							<li class="nav-item"><a class="nav-link active"
 								aria-current="page" href="${appName}logout">logout</a></li>
+=======
+						
+								<!--  user drop down-->
+								
+								<li class="nav-item dropdown"><a
+								class="nav-link dropdown-toggle active" href="#" id="navbarDropdown"
+								role="button" data-bs-toggle="dropdown" aria-expanded="false">
+									User</a>
+								<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+									<li><a class="dropdown-item" href="${appName}user/profile">profile
+									</a></li>
+									<li><a class="dropdown-item" href="${appName}user/edit?id=<security:authentication property="principal.id"/>">edit
+									profile
+									</a></li>
+										<li><a class="dropdown-item" href="${appName}logout">logout
+									</a></li>
+								</ul></li>
+								
+								<!-- game drop down -->
+								
+>>>>>>> 72565edc1e32761684188ee02bd674ee088b8b02
 							<li class="nav-item dropdown"><a
 								class="nav-link dropdown-toggle active" href="#" id="navbarDropdown"
 								role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -95,28 +117,16 @@
 						aria-label="Search">
 					<button class="btn btn-outline-success" type="submit">Search</button>
 				</form>
+				
 			</div>
 		</div>
 	</nav>
 
 
 
+
 	<script type="text/javascript"
 		src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script type="text/javascript">
-		$(document).ready(function() {
-			$('#list').click(function(event) {
-				event.preventDefault();
-				$('#products .item').addClass('list-group-item');
-			});
-			$('#grid').click(function(event) {
-				event.preventDefault();
-				$('#products .item').removeClass('list-group-item');
-				$('#products .item').addClass('grid-group-item');
-			});
-		});
-	</script>
-
 
 </body>
 </html>
